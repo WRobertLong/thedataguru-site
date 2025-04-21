@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      The Data Guru
+    </title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link href='//fonts.googleapis.com/css?family=Montserrat:thin,extra-light,light,100,200,300,400,500,600,700,800' 
+rel='stylesheet' type='text/css'>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+  $(document).ready(function () {
+    $('body').fadeIn(1000);
+  });
+
+  function goToReviews() {
+    $("body").fadeOut(1000, function () {
+      window.location.href = "stat-reviews.html";
+    });
+  }
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VSJE2TEEHZ"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VSJE2TEEHZ');
+</script>
+
+<script>
+  $(document).ready(function () {
+    $('body').fadeIn(1000);
+    $('.conbut[value="Connect"]').click(function () {
+      $('body').fadeOut(1000, function () {
+        window.location.href = "connect.html";
+      });
+    });
+  });
+</script>
+
+  </head>
+
+  <body style="display:none;">
+      <h1 class="align-centre">The Data Guru</h1>
+      <table id="maintab">
+        <tr>
+          <td align="left">
+            Big Data<br/>
+            Cloud Computing<br/>
+            Data Engineering<br/>
+            Functional Programming<br/>
+            Statistical Modelling<br/>
+            Machine Learning<br/>
+          </td>
+        </tr>
+        <tr>
+          <td align="right">
+            R</br>
+            Haskell</br>
+            Snowflake<br/>
+            Amazon AWS<br/>
+            SQL<br/>           
+            </td>
+          </tr>
+      </table>
+
+      <div class="align-centre">
+        <input type="button" class="conbut" onclick="" value="Connect" />
+      </div>
+      <div class="align-centre" style="margin-top: 1rem;">
+        <input type="button" class="conbut" value="Cardiology Paper Reviews" onclick="goToReviews()" />
+      </div>
+  </body>
+</html>

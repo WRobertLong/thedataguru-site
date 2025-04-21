@@ -1,0 +1,86 @@
+p, h1, h2, aa {
+  color: #ffebcd ;
+  font-weight: 200 ;
+  font-family: "Montserrat";
+}
+
+h3 {
+  color: #ffebcd ;
+  font-weight: 100 ;
+  font-family: "Montserrat";
+}
+
+
+body {
+  background-image: url("../images/subtle_carbon.png");
+}
+
+
+#maintab {
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+    font-weight: 200 ;
+    border-collapse: collapse;
+    width: 90%;
+    margin-left:5%; 
+    margin-right:5%;
+}
+
+#maintab td, #maintab th {
+    border: 0px solid #ddd;
+    padding: 8px;
+    color: #ffebcd;
+    font-size: 1.125em ;
+
+}
+
+@media screen and (max-width:980px) {
+  #maintab td, #maintab th {
+    font-size: 1.5em;
+  }
+}
+
+#maintab th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: #ffebcd;
+}
+
+.conbut {
+    background-color: black;
+    border: 0;
+    color: #ffebcd;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-family: "Montserrat";
+    font-weight: 200 ;
+  }
+
+.align-centre {
+    text-align: center;
+}
+
+
+/*Default styles*/
+.foobar  {
+  width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    /* For tablets: */
+    .foobar  {width: 33.33%;}
+}
+@media screen and (max-width: 768px) {
+    /* For desktop: */
+    .foobar  {width: 33.33%;}
+
+}
+
+
