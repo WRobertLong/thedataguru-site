@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cardiology Trial Reviews | The Data Guru</title>
+
+  <!-- link the same site‑wide stylesheet -->
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <style>
+    .wrapper { max-width: 920px; margin: 0 auto; }
+    /* bring over the header styles used on the review pages */
+    .logo       { display:block; margin:0 auto; width:180px; }
+    .tagline    { text-align:center; font-weight:300; color:#ccc; margin-bottom:2rem; }
+  </style>
+  <!-- minimal extra tweaks just for the list view -->
+  <style>
+    .review-table {
+      width: 100%;
+      max-width: 920px;
+      margin: 3rem auto;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    } 
+    .review-table thead {
+      background: #111;
+    }
+    .review-table th,
+    .review-table td {
+      border: 1px solid #333;
+      padding: 0.8rem 1rem;
+  }
+    .review-table th   { color: #FFD700; font-weight: 600; }
+    .review-table td a { color: #FFD700; text-decoration: none; }
+    .review-table tr:hover { background: #222; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="/"><img src="/images/medium_resolution_logo.png"
+                     alt="The Data Guru Logo" class="logo"></a>
+    <p class="tagline">Statistical and Methodological Reviews for Cardiologists</p>
+  </header>
+  
+  <main class="wrapper">
+    <h1 style="text-align:center; color:#FFD700;">Cardiology Trial Reviews</h1>
+  
+    <table class="review-table">
+      <thead>
+        <tr>
+          <th>Trial</th>
+          <th>Year</th>
+          <th>Lead author</th>
+          <th>One-line summary</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="./capricorn/">CAPRICORN</a></td>
+          <td>2001</td>
+          <td>Dargie et al.</td>
+          <td>Randomised, double‑blind carvedilol vs placebo in LV‑dysfunction post‑MI; mid‑trial endpoint split raised multiplicity concerns.</td>
+        </tr>
+        <!-- SPRINT row will go here later -->
+      </tbody>
+    </table>
+  </main>
+
+</body>
+</html>
