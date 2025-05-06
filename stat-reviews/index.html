@@ -15,24 +15,48 @@
   </style>
   <!-- minimal extra tweaks just for the list view -->
   <style>
-    .review-table {
-      width: 100%;
-      max-width: 920px;
-      margin: 3rem auto;
-      border-collapse: collapse;
-      font-size: 0.95rem;
-    } 
-    .review-table thead {
-      background: #111;
-    }
-    .review-table th,
-    .review-table td {
-      border: 1px solid #333;
-      padding: 0.8rem 1rem;
-  }
-    .review-table th   { color: #FFD700; font-weight: 600; }
-    .review-table td a { color: #FFD700; text-decoration: none; }
-    .review-table tr:hover { background: #222; }
+  .review-table {
+    width: 100%;
+    max-width: 920px;
+    margin: 3rem auto;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    background: #000;
+    color: #FFD700;
+}
+
+.review-table thead {
+  background: #111;
+}
+
+.review-table th,
+.review-table td {
+  border: 1px solid #333;
+  padding: 0.8rem 1rem;
+}
+
+.review-table th {
+  color: #FFD700;
+  font-weight: 600;
+}
+
+.review-table td a {
+  color: #FFD700;
+  text-decoration: underline;
+}
+
+.review-table td a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.review-table a:visited {
+  color: #FFD700;
+}
+
+.review-table tr:hover {
+  background: #222;
+}
   </style>
 </head>
 <body>
