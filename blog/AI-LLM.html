@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Are Large Language Models "Intelligent"? | The Data Guru</title>
+    <title>Are Large Language Models “Intelligent”? | The Data Guru</title>
 
-    <!-- Google tag (gtag.js) – same as CAPRICORN page -->
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VSJE2TEEHZ"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -14,458 +14,306 @@
         gtag("config", "G-VSJE2TEEHZ");
     </script>
 
-    <!-- Basic SEO -->
+    <!-- SEO -->
     <meta name="description" content="A critical, evidence-based argument that large language models are powerful text-prediction systems but not general intelligences, and that genuine AGI requires embodied, multimodal, socially grounded learning." />
-    <meta name="keywords" content="large language models, LLMs, artificial intelligence, AGI, predictive processing, embodiment, neuroscience, cardiology, statistics" />
+    <meta name="keywords" content="large language models, LLMs, artificial intelligence, AGI, predictive processing, embodiment, neuroscience, machine learning, statistics" />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Are Large Language Models "Intelligent"? | The Data Guru" />
+    <meta property="og:title" content="Are Large Language Models ‘Intelligent’? | The Data Guru" />
     <meta property="og:description" content="Why scaling text-only LLMs is unlikely to deliver AGI, and what neuroscience and economics say about the limits of the current paradigm." />
     <meta property="og:image" content="https://thedataguru.net/images/medium_resolution_logo.png" />
-    <meta property="og:url" content="https://thedataguru.net/stat-reviews/AI-LLM.html" />
+    <meta property="og:url" content="https://thedataguru.net/blog/AI-LLM.html" />
     <meta property="og:type" content="article" />
 
-    <!-- Twitter Card -->
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Are Large Language Models "Intelligent"? | The Data Guru" />
+    <meta name="twitter:title" content="Are Large Language Models ‘Intelligent’? | The Data Guru" />
     <meta name="twitter:description" content="A statistically and neuroscientifically grounded critique of calling LLMs 'intelligent', with implications for AGI." />
     <meta name="twitter:image" content="https://thedataguru.net/images/medium_resolution_logo.png" />
 
-    <!-- Fonts and CSS (same as CAPRICORN) -->
+    <!-- Fonts & Styles -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600" rel="stylesheet" />
     <link rel="stylesheet" href="/css/stat-reviews.css" />
 </head>
+
 <body>
 
 <a href="/"><img src="/images/medium_resolution_logo.png" alt="The Data Guru Logo" class="logo" /></a>
-<p class="tagline">Statistical and Methodological Reviews for Cardiologists</p>
+<p class="tagline">Statistical and Methodological Commentary</p>
 
-<!-- BEGIN AI / LLM ARTICLE HTML v1.1 -->
+<!-- BEGIN ARTICLE -->
 
-<h1>Are Large Language Models "Intelligent"? Text Prediction, Embodiment, and the Road to AGI</h1>
+<h1>Are Large Language Models “Intelligent”? Text Prediction, Embodiment, and the Road to AGI</h1>
 
 <p><strong>Author:</strong> Robert Long<br>
 <strong>Position:</strong> Principal Consultant (Statistics &amp; Data Science), The Data Guru Ltd<br>
-<strong>Intended audience:</strong> Clinicians, clinical researchers, data scientists, and anyone trying to interpret current claims about "AI" and "AGI".</p>
+<strong>Intended audience:</strong> Clinicians, researchers, data scientists, and anyone trying to interpret claims about “AI” and “AGI”.</p>
 
 <hr />
 
-<h2>1. Introduction: Why This Matters for Medicine and Society</h2>
+<h2>1. Introduction: Why This Matters</h2>
 
 <p>
-In mainstream media and much of industry, large language models (LLMs) are routinely described as "intelligent" or even exhibiting "sparks of AGI".
-For clinicians and researchers asked to adopt "AI tools", that framing is deeply misleading.
+In mainstream media and industry, large language models (LLMs) are routinely described as “intelligent” or even showing “sparks of AGI.”
+But current LLMs are <strong>self-supervised sequence models</strong>: extremely capable, but optimised to predict the next token in text.
+They are not grounded in the physical world and do not possess the embodied, causal, socially situated learning that characterises human intelligence.
 </p>
 
+<p>This article argues:</p>
+
+<ol>
+  <li>Calling LLMs “intelligent” in the human sense is misleading.</li>
+  <li>A credible path toward AGI requires <strong>embodied, multimodal, socially grounded, continual learning</strong>.</li>
+</ol>
+
+<hr />
+
+<h2>2. What LLMs Actually Do: Stochastic Parrots, Not Reasoners</h2>
+
 <p>
-Technically, current LLMs are <strong>self-supervised sequence models</strong> that learn to predict the next token (word, sub-word, character) in massive text corpora.
-They are extraordinarily good at this.
-But statistical competence on text does not automatically entail:
+Bender et al. (2021) describe LLMs as <strong>“stochastic parrots”</strong>: systems that can generate fluent text via statistical correlations but without grounding, understanding, or agency.<sup>1</sup>
+They warn that LLMs:
 </p>
 
 <ul>
-  <li>Understanding causality,</li>
-  <li>Grounding concepts in the physical world, or</li>
-  <li>Robust, goal-directed agency in noisy, uncertain environments.</li>
+  <li>scale environmental and financial costs,</li>
+  <li>amplify biases in web-scale data,</li>
+  <li>produce plausible-sounding but ungrounded outputs.</li>
 </ul>
 
 <p>
-This article makes two main claims:
+Multiple studies show that LLMs struggle with tasks requiring genuine reasoning or causal understanding, especially when problems deviate from training distributions.<sup>5,6</sup>
 </p>
 
+<hr />
+
+<h2>3. Scaling Is Hitting Technical and Economic Limits</h2>
+
+<p>Between 2020–2024, bigger models + more compute = better performance.</p>
+
+<p>Today, major constraints are clear:</p>
+
 <ol>
-  <li>Calling contemporary LLMs "intelligent" in the same sense as humans obscures critical limitations and invites over-reliance.</li>
-  <li>The plausible path to anything like "AGI" runs through <strong>embodied, multimodal, socially grounded, continual learning</strong> rather than simply building ever-bigger text models.</li>
+  <li><strong>Flattening scaling laws</strong> — marginal gains require exponentially more compute.<sup>8</sup></li>
+  <li><strong>Data exhaustion</strong> — high-quality text is nearly “mined out”.</li>
+  <li><strong>Macroeconomic limits</strong> — The 2025 Storm report argues current AI valuations rest on unrealistic productivity assumptions.<sup>8</sup></li>
 </ol>
 
 <p>
-The argument draws on work in computational linguistics (for example, the "stochastic parrots" critique of large models),<sup>1</sup>
-neuroscience of predictive processing,<sup>2,3</sup>
-concept representation in grounded vs non-grounded models,<sup>4</sup>
-research on reasoning limitations in LLMs,<sup>5,6</sup>
-continual learning challenges,<sup>7</sup>
-and macroeconomic analysis of the current "AI bubble".<sup>8</sup>
+If scaling alone could yield AGI, we would not need elaborate scaffolds like chain-of-thought prompting, retrieval, tool use, memory systems, or Monte Carlo search.
+These exist precisely because text prediction alone cannot produce causal world understanding.
 </p>
 
 <hr />
 
-<h2>2. What LLMs Actually Do: Stochastic Parrots, Not General Reasoners</h2>
+<h2>4. The Brain Is a Prediction Machine — But Predicting the World, Not Tokens</h2>
 
 <p>
-Formally, an LLM is a parameterised probability model that estimates
-<span class="math-text"><em>P</em>(token<sub>t</sub> | context)</span>
-over a vocabulary, where the context is usually the previous tokens in the sequence.
-Training proceeds by adjusting billions of parameters to minimise prediction error on large text datasets.
-</p>
-
-<p>
-Bender, Gebru, McMillan-Major, and Shmitchell (2021) famously describe such systems as
-<strong>"stochastic parrots"</strong> — models that can generate fluent text by exploiting statistical regularities in their training data, but without any intrinsic understanding of meaning, reference, or social responsibility.<sup>1</sup>
-Specifically, they argue that LLMs probabilistically link words and sentences together without considering meaning, operating as systems for "haphazardly stitching together sequences of linguistic forms" without reference to actual meaning.
-Their critique is not that these models are useless, but that:
+Predictive-processing theories (Friston 2010; Clark 2013) conceptualise the brain as a hierarchical prediction engine minimising error signals across sensory channels.<sup>2,3</sup>
+But crucially, the brain predicts:
 </p>
 
 <ul>
-  <li>They scale environmental and financial costs dramatically,</li>
-  <li>They amplify the biases of the underlying web-scale data, and</li>
-  <li>They encourage people to treat <em>plausible text</em> as <em>authoritative output</em>.</li>
+  <li>visual and auditory features,</li>
+  <li>motor outcomes and proprioception,</li>
+  <li>interoceptive signals,</li>
+  <li>social cues and intentions,</li>
+  <li>causal consequences of actions.</li>
 </ul>
 
 <p>
-Recent empirical work supports this scepticism about genuine reasoning.
-MIT researchers found that LLMs "often struggle to handle more complex problems that require true understanding" and that their reasoning abilities are often overestimated, with performance heavily dependent on whether tasks are similar to training data.<sup>5</sup>
-Similarly, six Apple researchers concluded that "current LLMs are not capable of genuine logical reasoning; instead, they attempt to replicate the reasoning steps observed in their training data".<sup>6</sup>
+A 2024 meta-analysis by Costa et al. identifies a <strong>domain-general “Dynamic Prediction Network”</strong> across cognition.<sup>4</sup>
 </p>
 
 <p>
-Clinically, these limitations matter.
-A system that can convincingly <em>phrase</em> a diagnosis, causal claim, or treatment recommendation is not necessarily one that can reliably <em>reason</em> about physiology, competing risks, or treatment interactions.
-It is optimised to produce <strong>likely-sounding</strong> text, not <strong>true</strong> or <strong>safe</strong> text.
+Humans are indeed prediction machines — just not <em>token-prediction</em> machines.
 </p>
 
 <hr />
 
-<h2>3. The Scaling Story: From Exponential Gains to Diminishing Returns</h2>
+<h2>5. How LLM Concept Representations Diverge from Human Concepts</h2>
 
 <p>
-From roughly 2020–2024, AI progress followed a relatively simple "scaling" narrative:
-bigger models, more data, more compute ⇒ better performance across many benchmarks.
+Xu et al. (2025) compared human conceptual representations with LLM embeddings for 4,442 concepts.<sup>9</sup>
+They found:
 </p>
 
-<p>
-However, there are now at least three serious constraints:
-</p>
-
-<ol>
-  <li><strong>Flattening scaling laws.</strong> Empirically, incremental performance gains on many tasks now require disproportionately large increases in parameters and compute. Industry leaders now acknowledge that simply using more compute and data during pretraining will not produce "some sort of all-knowing digital god".<sup>8</sup></li>
-  <li><strong>Data exhaustion.</strong> High-quality, web-scale text data is effectively "mined out"; further gains require increasingly synthetic or lower-quality data. The scaling laws that powered progress have hit diminishing returns, with high-quality data sources essentially exhausted.<sup>8</sup></li>
-  <li><strong>Macroeconomic limits.</strong> Storm (2025) argues that current AI investment represents a speculative bubble: trillions of dollars of planned data-centre capex rest on productivity assumptions that existing LLMs have not come close to delivering.<sup>8</sup></li>
-</ol>
+<ul>
+  <li>High similarity for abstract/non-sensorimotor features,</li>
+  <li>Lower similarity for sensory features,</li>
+  <li>Very poor similarity for motor/action features.</li>
+</ul>
 
 <p>
-In other words, simply building "GPT-7 but bigger" is running into <strong>diminishing marginal returns</strong> — both technically and economically.
-If scaling text prediction were <em>enough</em> to reach AGI, we would not see this pattern; we would simply keep turning the "bigger" dial.
-The evidence suggests we have reached "peak GenAI" in terms of current LLMs, with scaling unable to take us further toward artificial general intelligence as returns diminish rapidly.<sup>8</sup>
+This aligns with the <strong>symbol grounding problem</strong>: LLMs define symbols only via other symbols, not via embodied experience.<sup>10</sup>
 </p>
 
 <hr />
 
-<h2>4. The Brain as a Prediction Machine – But of What?</h2>
+<h2>6. Why Better Data Alone Won’t Fix It</h2>
 
-<p>
-A separate line of work in neuroscience treats the human brain itself as a <strong>prediction engine</strong>.
-In <em>predictive processing</em> and related "free-energy" frameworks, perception, action, and cognition arise from hierarchical brains continually generating predictions and minimising prediction error against incoming sensory data (for example, Friston, 2010; Clark, 2013).<sup>2,3</sup>
-</p>
-
-<p>
-Crucially, however, the brain is not predicting <em>tokens</em>. It is predicting:
-</p>
-
-<ul>
-  <li>Visual features and trajectories of objects,</li>
-  <li>Motor commands and proprioceptive feedback,</li>
-  <li>Interoceptive signals (heart rate, dyspnoea, nausea),</li>
-  <li>Social signals (facial expressions, tone of voice, posture), and</li>
-  <li>Higher-level states (intentions, threats, rewards).</li>
-</ul>
-
-<p>
-A recent large meta-analysis by Costa and colleagues (2024) integrates functional MRI data across
-multiple cognitive domains and finds evidence for a <strong>domain-general "Dynamic Prediction Network"</strong>:
-a distributed set of regions, including anterior insula, frontal and temporal gyri, and parietal lobules,
-activated across prediction tasks in cognitive control, language, motor, attention, and social cognition.<sup>4</sup>
-This supports the idea that <em>prediction</em> is a general organising principle of human cognition, not just a quirk of language.
-</p>
-
-<p>
-So a fair characterisation might be:
-<strong>humans are also prediction machines</strong> — but we are predicting the <strong>world</strong>, not just words.
-</p>
-
-<hr />
-
-<h2>5. How LLMs Diverge from Human Concept Representations</h2>
-
-<p>
-A natural counterargument is:
-"If humans are predictive systems and LLMs are predictive systems, perhaps scaling LLMs plus better training data will eventually give us human-like intelligence."
-</p>
-
-<p>
-Recent work by Xu and colleagues (2025) suggests this is overly optimistic.
-They compared representations of 4,442 concepts across:
-</p>
-
-<ul>
-  <li>Human behavioural norms (large-scale ratings of conceptual properties), and</li>
-  <li>State-of-the-art LLMs trained with and without visual input.</li>
-</ul>
-
-<p>
-They found that:
-</p>
-
-<ul>
-  <li>LLM–human similarity is <strong>highest</strong> for <em>non-sensorimotor</em> features (for example, abstract, social, or affective aspects),</li>
-  <li>Similarity <strong>drops markedly</strong> for <em>sensory</em> dimensions (for example, visual, auditory, tactile properties), and</li>
-  <li>It is <strong>lowest</strong> for <em>motor</em> features (for example, actions, bodily movements).<sup>9</sup></li>
-</ul>
-
-<p>
-Notably, LLMs augmented with visual training show improved alignment in vision-related dimensions,
-but still diverge strongly on motor features.<sup>9</sup>
-Taken together, this suggests that <strong>text alone is not enough</strong> to approximate human conceptual structure, especially for embodied and action-related concepts.
-</p>
-
-<p>
-This is precisely what one would expect if:
-</p>
-
-<ul>
-  <li>Human brains learn concepts through <strong>multisensory, embodied interaction</strong> with the world, and</li>
-  <li>LLMs learn only from <strong>linguistic co-occurrence statistics</strong> and, at best, paired text–image data.</li>
-</ul>
-
-<p>
-The so-called <strong>symbol grounding problem</strong><sup>10</sup> captures this issue: LLMs define symbols in terms of which other symbols they co-occur with, creating potential infinite regress without sensorimotor grounding in the physical world.
-</p>
-
-<hr />
-
-<h2>6. Why "Just Better Training Data" Is Not a Magic Fix</h2>
-
-<p>
-It is tempting to assume that if we could somehow:
-</p>
-
-<ul>
-  <li>Collect higher-quality text,</li>
-  <li>Add more diverse modalities (images, audio, video, physiological traces), and</li>
-  <li>Train on all of this with enough compute,</li>
-</ul>
-
-<p>
-then an LLM-like architecture would eventually converge to human-level intelligence.
-But two further obstacles complicate this story:
-</p>
+<p>Two structural barriers remain:</p>
 
 <ol>
   <li>
-    <strong>Embodiment and closed-loop interaction.</strong>
-    Brains do not merely passively receive data; they <strong>act</strong> in the world, generating the very sensory data they then learn from.
-    This tight perception–action loop matters for learning causality and control.
-    Human cognition is grounded in sensorimotor experiences in the external world and subjective feelings in the internal world, with natural languages grounded on shared sensorimotor experiences and feelings.<sup>10</sup>
+    <strong>Embodiment</strong>:  
+    Human cognition arises from closed-loop interaction with the world.  
+    LLMs lack sensorimotor grounding.<sup>10</sup>
   </li>
   <li>
-    <strong>Continual learning without catastrophic forgetting.</strong>
-    Biological systems update their internal models continuously over years and decades.
-    Humans and animals have the ability to continually acquire, fine-tune, and transfer knowledge and skills throughout their lifespan through a rich set of neurocognitive mechanisms.<sup>7</sup>
-    Current large models, by contrast, are typically trained in large offline batches and then either frozen or fine-tuned, with the continual acquisition of incrementally available information from non-stationary data distributions generally leading to catastrophic forgetting.<sup>7</sup>
-    Biological mechanisms leverage dual representation of specific and generalized memories within corticohippocampal circuits to facilitate lifelong learning, a capability that current artificial systems significantly lack.<sup>11</sup>
+    <strong>Continual learning</strong>:  
+    Humans learn over decades.  
+    LLMs forget catastrophically without specialised techniques.<sup>7,11</sup>
   </li>
 </ol>
 
 <p>
-Research on multi-agent reinforcement learning already shows <strong>emergent communication, coordination, and social conventions</strong> in relatively simple environments,<sup>12</sup> with social learning enabling agents to discover complex skills not learned from single-agent training and adapt online to novel environments by taking cues from experts.<sup>13</sup>
-But these systems remain fragile, task-specific, and heavily engineered.
-They are a hint of what may be required, not a finished solution.
+Multi-agent RL shows hints of emergent communication and culture,<sup>12,13</sup> but these systems remain brittle and narrow.
 </p>
 
 <hr />
 
-<h2>7. A More Plausible Path Toward General Intelligence</h2>
-
-<p>
-If we take the neuroscience and concept-representation data seriously, a more plausible route towards AGI looks something like this:
-</p>
+<h2>7. A More Plausible Route Toward AGI</h2>
 
 <ol>
-  <li>
-    <strong>Embodied agents.</strong><br />
-    Systems that learn in closed-loop interaction with physical or high-fidelity simulated environments, where motor actions have consequences and prediction errors are grounded in real dynamics, not just text inconsistencies.
-    Current research shows that embodied AI is increasingly recognized as a promising path to achieve AGI.<sup>14</sup>
-  </li>
-  <li>
-    <strong>Multimodal grounding.</strong><br />
-    Jointly learning from vision, audition, touch, proprioception, and interoception, so that "heart failure", "breathlessness", or "angina" are tied to real physiological patterns and patient trajectories, not just phrases in guidelines.
-    Symbol grounding, embodiment, causality, and memory represent foundational principles for achieving general intelligence that LLMs currently lack or implement inadequately.<sup>10</sup>
-  </li>
-  <li>
-    <strong>Social and cultural learning.</strong><br />
-    Acquiring norms, roles, and practices via interaction with other agents (human and artificial), including teaching, collaboration, and role-modelling — not just "reading" decontextualised text.
-    Multi-agent systems can demonstrate emergent social learning and cultural transmission,<sup>12,13</sup> capabilities essential for human-like intelligence.
-  </li>
-  <li>
-    <strong>Robust continual learning.</strong><br />
-    Architectures that can integrate new experience over time without erasing what has already been learned, more akin to human memory systems.<sup>7,11</sup>
-  </li>
-  <li>
-    <strong>Explicit uncertainty and causal modelling.</strong><br />
-    Representing and acting under uncertainty, with explicit causal models where appropriate, rather than relying purely on pattern-matching in token space.
-    LLMs lack an internal "world model" to predict world states and simulate long-term outcomes of actions, preventing them from performing deliberate planning like human brains.<sup>15</sup>
-  </li>
+  <li><strong>Embodied agents</strong> acting in real or simulated environments.<sup>14</sup></li>
+  <li><strong>Multimodal grounding</strong> linking concepts to perception and action.<sup>10</sup></li>
+  <li><strong>Social learning</strong> including teaching, imitation, and cultural transmission.<sup>12,13</sup></li>
+  <li><strong>Robust continual learning</strong> without catastrophic forgetting.<sup>7,11</sup></li>
+  <li><strong>Causal and uncertainty-aware reasoning</strong> building explicit models of the world.<sup>15</sup></li>
 </ol>
 
 <p>
-LLMs may well remain central components in such systems:
-as <strong>language interfaces, world-knowledge priors, code generators, and communication layers</strong>.
-But on this view, they are <em>modules</em> inside a broader architecture, not stand-alone artificial minds.
+LLMs may remain important modules — but <strong>not standalone artificial minds</strong>.
 </p>
 
 <hr />
 
-<h2>8. So, Are LLMs "Intelligent"?</h2>
+<h2>8. So, Are LLMs “Intelligent”?</h2>
 
 <p>
-In a weak, engineering sense — the ability to perform complex tasks that previously required humans — LLMs undeniably look "intelligent".
-They can summarise articles, draft code, translate languages, and assist with documentation at near-human levels on many benchmarks.
+If “intelligent” means surface competence, LLMs qualify.  
+If it means grounded understanding, causality, agency, and lifelong learning — they do not.
 </p>
 
 <p>
-But if by "intelligent" we mean:
-</p>
-
-<ul>
-  <li>Grounded understanding of the physical and social world,</li>
-  <li>Robust causal reasoning and counterfactual thinking,</li>
-  <li>Goal-directed behaviour in open-ended environments, and</li>
-  <li>Lifelong learning from embodied experience,</li>
-</ul>
-
-<p>
-then current text-trained LLMs simply do not qualify.
-They are <strong>powerful statistical tools</strong>, not general agents.
-</p>
-
-<p>
-This distinction matters for:
-</p>
-
-<ul>
-  <li><strong>Clinical safety</strong> (how we validate and monitor "AI" recommendations),</li>
-  <li><strong>Regulation</strong> (what level of oversight is appropriate), and</li>
-  <li><strong>Economic planning</strong> (how much we should invest, and on what assumptions).</li>
-</ul>
-
-<p>
-On the evidence we have, scaling text-only prediction is unlikely to get us to AGI.
-Future breakthroughs, if they arrive, will almost certainly involve <strong>embodied, multimodal, socially grounded, continually learning systems</strong> — in which LLMs are one important part, but not the whole story.
+Calling LLMs “intelligent” obscures real limitations and risks.
 </p>
 
 <hr />
 
-<h2>9. References (APA Style)</h2>
-
-<p><strong>Note:</strong> All DOIs are provided in URL form.</p>
+<h2>9. References</h2>
 
 <ul class="references">
+
   <li>
-    1. Bender, E. M., Gebru, T., McMillan-Major, A., &amp; Shmitchell, S. (2021).
+    Ahn, J., Verma, R., Lou, R., Liu, D., Zhang, R., & Yin, W. (2024).
+    <em>Large language models for mathematical reasoning: Progresses and challenges.</em>
+    arXiv preprint arXiv:2402.00157.
+    https://arxiv.org/abs/2402.00157
+  </li>
+
+  <li>
+    An, Z., Yu, X., Wang, C., Zhang, Y., & Song, C. (2025).
+    <em>Embodied intelligence: Recent advances and future perspectives.</em>
+    The Innovation Informatics, advance online publication.
+    https://doi.org/10.59717/j.xinn-inform.2025.100008
+  </li>
+
+  <li>
+    Bender, E. M., Gebru, T., McMillan-Major, A., & Shmitchell, S. (2021).
     On the dangers of stochastic parrots: Can language models be too big?
     In <em>FAccT '21: Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency</em> (pp. 610–623).
     Association for Computing Machinery.
-    <a href="https://doi.org/10.1145/3442188.3445922">https://doi.org/10.1145/3442188.3445922</a>
+    https://doi.org/10.1145/3442188.3445922
   </li>
 
   <li>
-    2. Clark, A. (2013).
+    Clark, A. (2013).
     Whatever next? Predictive brains, situated agents, and the future of cognitive science.
     <em>Behavioral and Brain Sciences, 36</em>(3), 181–204.
-    <a href="https://doi.org/10.1017/S0140525X12000477">https://doi.org/10.1017/S0140525X12000477</a>
+    https://doi.org/10.1017/S0140525X12000477
   </li>
 
   <li>
-    3. Friston, K. (2010).
-    The free-energy principle: A unified brain theory?
-    <em>Nature Reviews Neuroscience, 11</em>(2), 127–138.
-    <a href="https://doi.org/10.1038/nrn2787">https://doi.org/10.1038/nrn2787</a>
-  </li>
-
-  <li>
-    4. Costa, C., Pezzetta, R., Masina, F., Lago, S., Gastaldon, S., Frangi, C., Genon, S., Arcara, G., &amp; Scarpazza, C. (2024).
+    Costa, C., Pezzetta, R., Masina, F., Lago, S., Gastaldon, S., Frangi, C., Genon, S., Arcara, G., & Scarpazza, C. (2024).
     Comprehensive investigation of predictive processing: A cross- and within-cognitive domains fMRI meta-analytic approach.
     <em>Human Brain Mapping, 45</em>(12), e26817.
-    <a href="https://doi.org/10.1002/hbm.26817">https://doi.org/10.1002/hbm.26817</a>
+    https://doi.org/10.1002/hbm.26817
   </li>
 
   <li>
-    5. Pang, R. Y., Parrish, A., Joshi, N., Nangia, N., Phang, J., Chen, A., Padmakumar, V., Ma, J., Thompson, J., He, H., &amp; Bowman, S. R. (2024).
-    GSM-Symbolic: Understanding the limitations of mathematical reasoning in large language models.
-    <em>arXiv preprint arXiv:2410.05229</em>.
-    <a href="https://arxiv.org/abs/2410.05229">https://arxiv.org/abs/2410.05229</a>
+    Friston, K. (2010).
+    The free-energy principle: A unified brain theory?
+    <em>Nature Reviews Neuroscience, 11</em>(2), 127–138.
+    https://doi.org/10.1038/nrn2787
   </li>
 
   <li>
-    6. Ahn, J., Verma, R., Lou, R., Liu, D., Zhang, R., &amp; Yin, W. (2024).
-    Large language models for mathematical reasoning: Progresses and challenges.
-    <em>arXiv preprint arXiv:2402.00157</em>.
-    <a href="https://arxiv.org/abs/2402.00157">https://arxiv.org/abs/2402.00157</a>
-  </li>
-
-  <li>
-    7. Zhao, W. X., Zhou, K., Li, J., Tang, T., Wang, X., Hou, Y., Min, Y., Zhang, B., Zhang, J., Dong, Z., Du, Y., Yang, C., Chen, Y., Chen, Z., Jiang, J., Ren, R., Li, Y., Tang, X., Liu, Z., ... Wen, J. R. (2024).
-    A survey on large language models for continual learning.
-    <em>arXiv preprint arXiv:2402.01364</em>.
-    <a href="https://arxiv.org/abs/2402.01364">https://arxiv.org/abs/2402.01364</a>
-  </li>
-
-  <li>
-    8. Storm, S. (2025).
-    <em>The AI bubble and the U.S. economy: How long do "hallucinations" last?</em>
-    (Working Paper No. 240).
-    Institute for New Economic Thinking.
-    <a href="https://doi.org/10.36687/inetwp240">https://doi.org/10.36687/inetwp240</a>
-  </li>
-
-  <li>
-    9. Xu, Q., Peng, Y., Nastase, S. A., Chodorow, M., Wu, M., &amp; Li, P. (2025).
-    Large language models without grounding recover non-sensorimotor but not sensorimotor features of human concepts.
-    <em>Nature Human Behaviour, 9</em>(9), 1871–1886.
-    <a href="https://doi.org/10.1038/s41562-025-02203-8">https://doi.org/10.1038/s41562-025-02203-8</a>
-  </li>
-
-  <li>
-    10. Harnad, S. (1990).
+    Harnad, S. (1990).
     The symbol grounding problem.
-    <em>Physica D: Nonlinear Phenomena, 42</em>(1-3), 335–346.
-    <a href="https://doi.org/10.1016/0167-2789(90)90087-6">https://doi.org/10.1016/0167-2789(90)90087-6</a>
+    <em>Physica D: Nonlinear Phenomena, 42</em>(1–3), 335–346.
+    https://doi.org/10.1016/0167-2789(90)90087-6
   </li>
 
   <li>
-    11. Van de Ven, G. M., Siegelmann, H. T., &amp; Tolias, A. S. (2020).
-    Brain-inspired replay for continual learning with artificial neural networks.
-    <em>Nature Communications, 11</em>, 4069.
-    <a href="https://doi.org/10.1038/s41467-020-17866-2">https://doi.org/10.1038/s41467-020-17866-2</a>
+    Hao, S., Gu, Y., Ma, H., Hong, J. J., Wang, Z., Wang, D. Z., & Hu, Z. (2023).
+    <em>Reasoning with language model is planning with world model.</em>
+    arXiv preprint arXiv:2305.14992.
+    https://arxiv.org/abs/2305.14992
   </li>
 
   <li>
-    12. Phan, T., Belzner, L., Gabor, T., Sedlmeier, A., Ritz, F., &amp; Linnhoff-Popien, C. (2024).
-    Multi-agent reinforcement learning: A comprehensive survey.
-    <em>IEEE Transactions on Pattern Analysis and Machine Intelligence</em>, early access.
-    <a href="https://doi.org/10.1109/TPAMI.2024.3378699">https://doi.org/10.1109/TPAMI.2024.3378699</a>
-  </li>
-
-  <li>
-    13. Ndousse, K., Eck, D., Levine, S., &amp; Jaques, N. (2021).
+    Ndousse, K., Eck, D., Levine, S., & Jaques, N. (2021).
     Emergent social learning via multi-agent reinforcement learning.
     In <em>Proceedings of the 38th International Conference on Machine Learning</em> (pp. 7991–8004).
     PMLR.
-    <a href="https://proceedings.mlr.press/v139/ndousse21a.html">https://proceedings.mlr.press/v139/ndousse21a.html</a>
+    https://proceedings.mlr.press/v139/ndousse21a.html
   </li>
 
   <li>
-    14. An, Z., Yu, X., Wang, C., Zhang, Y., &amp; Song, C. (2025).
-    Embodied intelligence: Recent advances and future perspectives.
-    <em>The Innovation Informatics</em>, advance online publication.
-    <a href="https://doi.org/10.59717/j.xinn-inform.2025.100008">https://doi.org/10.59717/j.xinn-inform.2025.100008</a>
+    Pang, R. Y., Parrish, A., Joshi, N., Nangia, N., Phang, J., Chen, A., Padmakumar, V., Ma, J., Thompson, J., He, H., & Bowman, S. R. (2024).
+    <em>GSM-Symbolic: Understanding the limitations of mathematical reasoning in large language models.</em>
+    arXiv preprint arXiv:2410.05229.
+    https://arxiv.org/abs/2410.05229
   </li>
 
   <li>
-    15. Hao, S., Gu, Y., Ma, H., Hong, J. J., Wang, Z., Wang, D. Z., &amp; Hu, Z. (2023).
-    Reasoning with language model is planning with world model.
-    <em>arXiv preprint arXiv:2305.14992</em>.
-    <a href="https://arxiv.org/abs/2305.14992">https://arxiv.org/abs/2305.14992</a>
+    Phan, T., Belzner, L., Gabor, T., Sedlmeier, A., Ritz, F., & Linnhoff-Popien, C. (2024).
+    Multi-agent reinforcement learning: A comprehensive survey.
+    <em>IEEE Transactions on Pattern Analysis and Machine Intelligence</em>, early access.
+    https://doi.org/10.1109/TPAMI.2024.3378699
   </li>
+
+  <li>
+    Storm, S. (2025).
+    <em>The AI bubble and the U.S. economy: How long do “hallucinations” last?</em>
+    (Working Paper No. 240).
+    Institute for New Economic Thinking.
+    https://doi.org/10.36687/inetwp240
+  </li>
+
+  <li>
+    van de Ven, G. M., Siegelmann, H. T., & Tolias, A. S. (2020).
+    Brain-inspired replay for continual learning with artificial neural networks.
+    <em>Nature Communications, 11</em>, 4069.
+    https://doi.org/10.1038/s41467-020-17866-2
+  </li>
+
+  <li>
+    Xu, Q., Peng, Y., Nastase, S. A., Chodorow, M., Wu, M., & Li, P. (2025).
+    Large language models without grounding recover non-sensorimotor but not sensorimotor features of human concepts.
+    <em>Nature Human Behaviour, 9</em>(9), 1871–1886.
+    https://doi.org/10.1038/s41562-025-02203-8
+  </li>
+
+  <li>
+    Zhao, W. X., Zhou, K., Li, J., Tang, T., Wang, X., Hou, Y., Min, Y., Zhang, B., Zhang, J., Dong, Z., Du, Y., Yang, C., Chen, Y., Chen, Z., Jiang, J., Ren, R., Li, Y., Tang, X., Liu, Z., ... Wen, J. R. (2024).
+    A survey on large language models for continual learning.
+    <em>arXiv preprint arXiv:2402.01364.</em>
+    https://arxiv.org/abs/2402.01364
+  </li>
+
 </ul>
 
 <!-- END AI / LLM ARTICLE HTML v1.1 -->
