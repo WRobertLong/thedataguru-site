@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VSJE2TEEHZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-VSJE2TEEHZ");
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact — The Data Guru Ltd</title>
+  <meta name="description" content="Get in touch with The Data Guru Ltd for data consulting, recovery, or diagnostics.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <img src="images/medium_resolution_logo-cropped.png" alt="The Data Guru Ltd" class="logo-img">
+        <span class="logo-main">The Data Guru</span>
+        <span class="logo-sub">Ltd</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html" class="nav-cta active">Get in Touch</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Get in Touch</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-eyebrow">Get in Touch</p>
+      <h1>Contact Us</h1>
+      <p>Whether it's a quick question or a complex project — we'd love to hear from you.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT MAIN -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- Left: Info -->
+        <div class="contact-info">
+          <p class="section-eyebrow">Reach Out</p>
+          <h3>Let's Talk About<br><em>Your Data</em></h3>
+          <p style="margin-top:1rem;">Whether you're facing a data emergency, planning a consulting project, or just want to explore what's possible — get in touch and we'll respond within one business day.</p>
+
+          <div class="contact-detail">
+            <div class="detail-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <div style="font-size:0.72rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--clr-text-muted); margin-bottom:0.2rem;">Email</div>
+              <a href="mailto:contact@thedataguru.co.uk">contact@thedataguru.co.uk</a>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="detail-icon"><i class="fab fa-linkedin-in"></i></div>
+            <div>
+              <div style="font-size:0.72rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--clr-text-muted); margin-bottom:0.2rem;">LinkedIn</div>
+              <a href="https://www.linkedin.com/in/roblongleeds/" target="_blank">Robert Long</a>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="detail-icon"><i class="fab fa-github"></i></div>
+            <div>
+              <div style="font-size:0.72rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--clr-text-muted); margin-bottom:0.2rem;">GitHub</div>
+              <a href="https://github.com/WRobertLong" target="_blank">WRobertLong</a>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="detail-icon"><i class="fas fa-chart-bar"></i></div>
+            <div>
+              <div style="font-size:0.72rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--clr-text-muted); margin-bottom:0.2rem;">Cross Validated</div>
+              <a href="https://stats.stackexchange.com/users/7486/robert-long" target="_blank">Robert Long — #17 All Time</a>
+            </div>
+          </div>
+
+          <!-- Emergency note -->
+          <div style="background:var(--clr-bg-alt); border:1px solid var(--clr-border); border-left:3px solid var(--clr-accent); border-radius:var(--radius); padding:1.25rem 1.5rem; margin-top:2rem;">
+            <p style="font-size:0.8rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--clr-accent); margin-bottom:0.35rem;">Data Emergency?</p>
+            <p style="font-size:0.875rem; color:var(--clr-text-muted); line-height:1.7; margin:0;">If you've experienced sudden data loss, <strong style="color:var(--clr-text);">stop using the affected device immediately</strong> and get in touch. The sooner we assess the situation, the better the recovery outcome.</p>
+          </div>
+        </div>
+
+        <!-- Right: Form -->
+        <div class="contact-form">
+          <h3>Send a Message</h3>
+          <p>Fill in the form below and we'll get back to you within one business day.</p>
+
+          <form id="contactForm" onsubmit="handleSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Robert" required>
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Long" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            </div>
+            <div class="form-group">
+              <label for="service">Service of Interest</label>
+              <select id="service" name="service">
+                <option value="">Select a service…</option>
+                <option value="analytics">Data &amp; Analytics Consulting</option>
+                <option value="recovery">Data Recovery</option>
+                <option value="diagnostics">Diagnostics &amp; Repair</option>
+                <option value="training">Training &amp; Workshops</option>
+                <option value="other">Other / Not Sure</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Tell us a bit about what you need…" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary form-submit">Send Message</button>
+          </form>
+
+          <div id="formSuccess" style="display:none; text-align:center; padding:2rem 0;">
+            <div style="font-size:2.5rem; color:var(--clr-accent); margin-bottom:1rem;"><i class="fas fa-check-circle"></i></div>
+            <h4 style="font-family:var(--font-display); font-size:1.4rem; margin-bottom:0.5rem;">Message Sent</h4>
+            <p style="color:var(--clr-text-muted); font-size:0.9rem;">Thank you for reaching out. We'll be in touch within one business day.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <span class="logo-main">The Data Guru</span>
+            <span class="logo-sub">&nbsp;Ltd</span>
+          </a>
+          <p>Expert data consulting, recovery, and device diagnostics. Bringing clarity and confidence to your most important asset.</p>
+          <div class="footer-social">
+            <a href="https://www.linkedin.com/in/roblongleeds/" target="_blank" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/WRobertLong" target="_blank" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://stats.stackexchange.com/users/7486/robert-long" target="_blank" class="social-link" aria-label="Cross Validated"><i class="fas fa-chart-bar"></i></a>
+            <a href="mailto:contact@thedataguru.co.uk" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="services.html#analytics">Data &amp; Analytics Consulting</a></li>
+            <li><a href="services.html#recovery">Data Recovery</a></li>
+            <li><a href="services.html#diagnostics">Diagnostics &amp; Repair</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="about.html">About Robert</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Community</h5>
+          <ul>
+            <li><a href="https://stats.stackexchange.com/users/7486/robert-long" target="_blank">Cross Validated</a></li>
+            <li><a href="https://stackoverflow.com/users/1009823/robert-long" target="_blank">Stack Overflow</a></li>
+            <li><a href="https://github.com/WRobertLong" target="_blank">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 The Data Guru Ltd. All rights reserved.</span>
+        <span>Registered in England &amp; Wales</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts/script.js"></script>
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      document.getElementById('contactForm').style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    }
+  </script>
+</body>
+</html>

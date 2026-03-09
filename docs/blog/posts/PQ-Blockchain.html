@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Quantum Challenge to Blockchain | The Data Guru</title>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VSJE2TEEHZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-VSJE2TEEHZ");
+  </script>
+
+  <!-- SEO -->
+  <meta name="description" content="A strategic analysis of the quantum computing threat to blockchain, covering cryptographic vulnerabilities, 'Harvest Now, Decrypt Later' risks, and post-quantum mitigation for business leaders.">
+  <meta name="keywords" content="blockchain, quantum computing, post-quantum cryptography, business strategy, bitcoin vulnerability, Shor's algorithm, fintech, digital assets">
+  <meta name="author" content="Sasha Long">
+  <meta property="og:title" content="The Quantum Challenge to Blockchain | The Data Guru">
+  <meta property="og:description" content="Why quantum computing is a strategic crisis for crypto, not just a glitch.">
+  <meta property="og:image" content="https://thedataguru.net/images/BlockChain.jpg">
+  <meta property="og:url" content="https://thedataguru.net/blog/posts/PQ-Blockchain.html">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../styles/articles.css">
+</head>
+<body class="article-page">
+
+  <!-- NAV -->
+  <nav class="nav" id="navbar">
+    <div class="nav-inner">
+      <a href="/index.html" class="logo">
+        <img src="/images/medium_resolution_logo-cropped.png" alt="The Data Guru Ltd" class="logo-img">
+        <span class="logo-main">The Data Guru</span>
+        <span class="logo-sub">Ltd</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/services.html">Services</a></li>
+        <li><a href="/blog.html" class="active">Blog</a></li>
+        <li><a href="/contact.html" class="nav-cta">Get in Touch</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="/index.html">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/services.html">Services</a>
+      <a href="/blog.html">Blog</a>
+      <a href="/contact.html">Get in Touch</a>
+    </div>
+  </nav>
+
+  <!-- ARTICLE HERO -->
+  <div class="article-hero">
+    <div style="max-width:1160px; margin:0 auto; padding:0 2rem;">
+      <span class="eyebrow">Blockchain &amp; Quantum Computing</span>
+      <h1>The Quantum Challenge to Blockchain: What Business Leaders Need to Know</h1>
+      <div class="article-meta">
+        <span><strong>Author:</strong> Sasha Long</span>
+        <div class="meta-divider"></div>
+        <span><strong>Role:</strong> Junior Associate &amp; Researcher, The Data Guru Ltd</span>
+        <div class="meta-divider"></div>
+        <span><strong>Audience:</strong> Business leaders, investors, finance &amp; policy students</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ARTICLE BODY -->
+  <article class="article-body">
+
+    <p>Over the past few months, I've been diving deep into blockchain technology — not just the headlines about Bitcoin prices, but the fundamental architecture that's quietly reshaping finance, supply chains, and digital identity. What started as curiosity about cryptocurrency turned into something far more fascinating: understanding how the very mathematics securing trillions of dollars in digital assets could be vulnerable to the next generation of computing.</p>
+
+    <p><em>A practical guide to understanding distributed ledger technology, digital assets, and the cryptographic vulnerabilities reshaping our financial future.</em></p>
+
+    <hr>
+
+    <h2>What Is Blockchain?</h2>
+
+    <p>A blockchain is a distributed ledger — a database that is simultaneously maintained across thousands of computers worldwide. Unlike traditional databases controlled by a single entity (like a bank or government), blockchain data is decentralised: no single party owns it, and changing any record requires the consensus of the network.</p>
+
+    <p>Each "block" contains a batch of transactions plus a cryptographic hash — essentially a unique digital fingerprint — of the previous block. This chain of hashes means that altering any historical record would invalidate every subsequent block, making tampering computationally prohibitive. The security of this system rests entirely on the strength of its cryptography.</p>
+
+    <h2>The Cryptographic Foundation</h2>
+
+    <p>Bitcoin and Ethereum primarily rely on two cryptographic systems:</p>
+
+    <ul>
+      <li><strong>ECDSA (Elliptic Curve Digital Signature Algorithm)</strong> — used to sign transactions and prove ownership of digital assets.</li>
+      <li><strong>SHA-256 (Secure Hash Algorithm)</strong> — used in Bitcoin's proof-of-work mining and to create block hashes.</li>
+    </ul>
+
+    <p>These algorithms are secure against classical computers because the mathematical problems they rely on — factoring large integers and solving discrete logarithms — would take classical computers millions of years to solve at current key sizes.</p>
+
+    <p>Quantum computers change this calculus entirely.</p>
+
+    <h2>Shor's Algorithm: The Existential Threat</h2>
+
+    <p>In 1994, mathematician Peter Shor published an algorithm that, running on a sufficiently powerful quantum computer, could factor large integers and solve discrete logarithm problems exponentially faster than any classical approach. This directly threatens ECDSA.</p>
+
+    <p>In practical terms: a quantum computer running Shor's algorithm could, given a Bitcoin public key, derive the corresponding private key — allowing an attacker to sign transactions and steal funds. Current estimates suggest this would require a quantum computer with several thousand to a few million "logical qubits" (error-corrected qubits), compared to today's machines which have a few hundred noisy physical qubits.</p>
+
+    <p>We are not there yet. But the trajectory is clear.</p>
+
+    <h2>"Harvest Now, Decrypt Later"</h2>
+
+    <p>The most immediate strategic threat isn't future theft — it's present-day data harvesting. Nation-states and sophisticated adversaries are believed to be collecting encrypted blockchain data today, with the intention of decrypting it once quantum computers become capable enough. For blockchain, this means:</p>
+
+    <ul>
+      <li>Transaction histories that appear private today may be fully exposed in 10–15 years.</li>
+      <li>Long-term digital asset holdings are particularly at risk.</li>
+      <li>Smart contracts with multi-year lifespans may be compromised before they complete.</li>
+    </ul>
+
+    <p>This "harvest now, decrypt later" (HNDL) strategy means the quantum threat is not purely future — organisations must act now.</p>
+
+    <h2>Grover's Algorithm and Proof-of-Work</h2>
+
+    <p>SHA-256, used in Bitcoin mining, faces a different but real threat from Grover's algorithm, which provides a quadratic speedup for searching unsorted databases. In cryptographic terms, Grover's effectively halves the security strength of hash functions: SHA-256 would behave like a 128-bit hash against a quantum adversary.</p>
+
+    <p>This is manageable — the fix is doubling hash lengths (moving to SHA-512 or similar). But it requires coordinated protocol upgrades across the entire Bitcoin network, which is notoriously difficult to achieve given its decentralised governance.</p>
+
+    <h2>Post-Quantum Cryptography: The Path Forward</h2>
+
+    <p>In 2024, the US National Institute of Standards and Technology (NIST) finalised its first post-quantum cryptographic standards, including:</p>
+
+    <ul>
+      <li><strong>ML-KEM</strong> (formerly CRYSTALS-Kyber) — for key encapsulation.</li>
+      <li><strong>ML-DSA</strong> (formerly CRYSTALS-Dilithium) — for digital signatures.</li>
+      <li><strong>SLH-DSA</strong> (formerly SPHINCS+) — a hash-based signature scheme.</li>
+    </ul>
+
+    <p>These algorithms are believed to be resistant to both classical and quantum attacks. Several blockchain projects are actively exploring migration paths, but retrofitting a live, decentralised network with billions in value is an enormous engineering and governance challenge.</p>
+
+    <h2>Implications for Business Leaders</h2>
+
+    <p>The quantum threat to blockchain is not science fiction — it is a strategic risk that belongs in enterprise risk frameworks today. Key considerations:</p>
+
+    <ul>
+      <li><strong>Crypto asset custodians</strong> should assess quantum exposure in their key management infrastructure.</li>
+      <li><strong>Smart contract developers</strong> building long-duration contracts should factor in post-quantum migration timelines.</li>
+      <li><strong>Supply chain and identity applications</strong> built on blockchain should begin evaluating post-quantum alternatives now.</li>
+      <li><strong>Investors</strong> should scrutinise whether blockchain projects in their portfolios have credible quantum migration roadmaps.</li>
+    </ul>
+
+    <p>The window for orderly, planned migration is open. It will not remain so indefinitely.</p>
+
+    <h2>Conclusion</h2>
+
+    <p>Blockchain's revolutionary architecture rests on mathematical foundations that quantum computing will eventually undermine. The timeline is uncertain — but the direction is not. Organisations that treat this as a distant, technical concern risk being caught unprepared when capable quantum computers arrive.</p>
+
+    <p>The good news: post-quantum cryptographic standards now exist, and the migration path, while complex, is achievable. The time to begin planning is now.</p>
+
+    <a href="/blog.html" class="back-link">← Back to Blog</a>
+
+  </article>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/index.html" class="logo">
+          <span class="logo-main">The Data Guru</span>
+          <span class="logo-sub">&nbsp;Ltd</span>
+        </a>
+        <p>Expert data consulting, recovery, and device diagnostics.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/roblongleeds/" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/WRobertLong" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+          <a href="https://stats.stackexchange.com/users/7486/robert-long" target="_blank" class="social-link"><i class="fas fa-chart-bar"></i></a>
+          <a href="mailto:rob@thedataguru.net" class="social-link"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="/services.html#analytics">Analytics Consulting</a></li>
+          <li><a href="/services.html#recovery">Data Recovery</a></li>
+          <li><a href="/services.html#diagnostics">Diagnostics &amp; Repair</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="/about.html">About Robert</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Community</h5>
+        <ul>
+          <li><a href="https://stats.stackexchange.com/users/7486/robert-long" target="_blank">Cross Validated</a></li>
+          <li><a href="https://stackoverflow.com/users/1009823/robert-long" target="_blank">Stack Overflow</a></li>
+          <li><a href="https://github.com/WRobertLong" target="_blank">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 The Data Guru Ltd. All rights reserved.</span>
+      <span>Registered in England &amp; Wales</span>
+    </div>
+  </footer>
+
+  <script src="/scripts/script.js"></script>
+</body>
+</html>
