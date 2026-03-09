@@ -2,137 +2,136 @@
    THE DATA GURU LTD — Main Script
    ============================================== */
 
-// ---- Particles (home page only) ----
+// ---- Theme Toggle (runs immediately before DOM ready to prevent flash) ----
+(function() {
+  const saved = localStorage.getItem('tdg-theme');
+  if (saved === 'light') {
+    document.documentElement.setAttribute('data-theme', 'light');
+  }
+})();
+
 document.addEventListener("DOMContentLoaded", function () {
-  const particlesEl = document.getElementById('particles-js');
-  if (particlesEl) {
-    if (typeof particlesJS === "undefined") {
-      console.warn("particles.js not loaded");
-    } else {
-      particlesJS('particles-js', {
-        particles: {
-          number: { value: 70, density: { enable: true, value_area: 900 } },
-          color: { value: '#c0622a' },       // terracotta accent
-          shape: { type: 'circle' },
-          opacity: {
-            value: 0.45,
-            random: true,
-            anim: { enable: true, speed: 0.6, opacity_min: 0.1, sync: false }
-          },
-          size: { value: 2.5, random: true },
-          line_linked: {
-            enable: true,
-            distance: 150,
-            color: '#b8963e',               // warm gold for lines
-            opacity: 0.3,
-            width: 1
-          },
-          move: {
-            enable: true,
-            speed: 1.2,                     // slow & gentle
-            direction: 'none',
-            random: true,
-            straight: false,
-            out_mode: 'out',
-            bounce: false,
-          },
+
+  // ---- Theme toggle button ----
+  const themeBtn = document.getElementById('themeToggle');
+  if (themeBtn) {
+    const updateBtn = () => {
+      const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+      themeBtn.innerHTML = isLight ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+      themeBtn.setAttribute('aria-label', isLight ? 'Switch to dark mode' : 'Switch to light mode');
+    };
+    updateBtn();
+    themeBtn.addEventListener('click', () => {
+      const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+      if (isLight) {
+        document.documentElement.removeAttribute('data-theme');
+        localStorage.setItem('tdg-theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('tdg-theme', 'light');
+      }
+      updateBtn();
+      reinitParticles();
+    });
+  }
+
+  // ---- Particles config ----
+  function getParticleConfig() {
+    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    return {
+      particles: {
+        number: { value: 80, density: { enable: true, value_area: 900 } },
+        color: { value: isLight ? '#1e3a2f' : '#4ade80' },
+        shape: { type: 'circle' },
+        opacity: {
+          value: isLight ? 0.40 : 0.60,
+          random: true,
+          anim: { enable: true, speed: 0.6, opacity_min: 0.1, sync: false }
         },
-        interactivity: {
-          detect_on: 'window',
-          events: {
-            onhover: { enable: true, mode: 'grab' },
-            onclick: { enable: true, mode: 'push' },
-            resize: true,
-          },
-          modes: {
-            grab:    { distance: 160, line_linked: { opacity: 0.6 } },
-            push:    { particles_nb: 4 },
-            repulse: { distance: 120, duration: 0.4 },
-          },
+        size: { value: 2.8, random: true },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: isLight ? '#2d6a4f' : '#22d3ee',
+          opacity: isLight ? 0.25 : 0.40,
+          width: 1
         },
-        retina_detect: true,
-      });
+        move: {
+          enable: true, speed: 1.2, direction: 'none',
+          random: true, straight: false, out_mode: 'out', bounce: false,
+        },
+      },
+      interactivity: {
+        detect_on: 'window',
+        events: {
+          onhover: { enable: true, mode: 'grab' },
+          onclick: { enable: true, mode: 'push' },
+          resize: true,
+        },
+        modes: {
+          grab:    { distance: 160, line_linked: { opacity: 0.7 } },
+          push:    { particles_nb: 4 },
+          repulse: { distance: 120, duration: 0.4 },
+        },
+      },
+      retina_detect: true,
+    };
+  }
+
+  function reinitParticles() {
+    if (typeof particlesJS === 'undefined') return;
+    if (window.pJSDom && window.pJSDom.length > 0) {
+      try { window.pJSDom[0].pJS.fn.vendors.destroypJS(); } catch(e) {}
+      window.pJSDom = [];
+    }
+    if (document.getElementById('particles-js')) {
+      particlesJS('particles-js', getParticleConfig());
     }
   }
 
-  // ---- Animated role cycling ----
-  const roleEl = document.getElementById('roleText');
-  if (roleEl) {
-    const roles = [
-      "Data Analytics",
-      "Data Engineering",
-      "Data Architecture",
-      "Data Recovery",
-      "Data Strategy",
-      "Data Modelling",
-      "Business Intelligence",
-      "Statistical Consulting",
-      "iPad / iPhone Repair",
-      "Computer Repair",
-    ];
-    let idx = 0;
-
-    roleEl.classList.add('fade-in');
-
-    setInterval(() => {
-      roleEl.classList.remove('fade-in');
-      roleEl.classList.add('fade-out');
-
-      setTimeout(() => {
-        idx = (idx + 1) % roles.length;
-        roleEl.textContent = roles[idx];
-        roleEl.classList.remove('fade-out');
-        roleEl.classList.add('fade-in');
-      }, 500);
-    }, 3000);
+  // Init particles
+  if (document.getElementById('particles-js')) {
+    if (typeof particlesJS === 'undefined') {
+      console.warn('particles.js not loaded');
+    } else {
+      particlesJS('particles-js', getParticleConfig());
+    }
   }
 
   // ---- Navbar scroll state ----
   const navbar = document.getElementById('navbar');
   if (navbar) {
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 40) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
     }, { passive: true });
   }
 
   // ---- Mobile hamburger ----
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
-
   if (hamburger && mobileMenu) {
     hamburger.addEventListener('click', () => {
       const isOpen = mobileMenu.classList.toggle('open');
       hamburger.setAttribute('aria-expanded', isOpen);
-      // Animate spans
       const spans = hamburger.querySelectorAll('span');
       if (isOpen) {
         spans[0].style.transform = 'translateY(7px) rotate(45deg)';
         spans[1].style.opacity  = '0';
         spans[2].style.transform = 'translateY(-7px) rotate(-45deg)';
       } else {
-        spans[0].style.transform = '';
-        spans[1].style.opacity  = '';
-        spans[2].style.transform = '';
+        spans.forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
       }
     });
-
-    // Close on outside click
     document.addEventListener('click', (e) => {
       if (!navbar.contains(e.target)) {
         mobileMenu.classList.remove('open');
         const spans = hamburger.querySelectorAll('span');
-        spans[0].style.transform = '';
-        spans[1].style.opacity  = '';
-        spans[2].style.transform = '';
+        spans.forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
       }
     });
   }
 
-  // ---- Fade-in on scroll (sections) ----
+  // ---- Fade-in on scroll ----
   const fadeEls = document.querySelectorAll('.service-card, .testimonial-card, .blog-card, .service-full-card');
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver((entries) => {
@@ -144,7 +143,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
     fadeEls.forEach((el, i) => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(20px)';
@@ -152,4 +150,5 @@ document.addEventListener("DOMContentLoaded", function () {
       observer.observe(el);
     });
   }
+
 });

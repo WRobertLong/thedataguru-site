@@ -12,20 +12,23 @@
   font-display: swap;
 }
 
-/* --- CSS Variables --- */
+/* --- CSS Variables — Dark Theme (default, matches logo) --- */
 :root {
-  --clr-bg:         #FAF7F2;       /* warm off-white */
-  --clr-bg-alt:     #F2EDE4;       /* slightly deeper warm */
-  --clr-hero-bg:    #1A1612;       /* very dark warm brown/black */
-  --clr-text:       #2C2520;       /* dark warm brown */
-  --clr-text-muted: #7A6E65;       /* muted warm brown */
-  --clr-accent:     #C0622A;       /* burnt orange / terracotta */
-  --clr-accent-lt:  #E8A87C;       /* lighter terracotta */
-  --clr-accent-dk:  #8B3E18;       /* deeper burnt orange */
-  --clr-gold:       #B8963E;       /* warm gold */
-  --clr-surface:    #FFFFFF;
-  --clr-border:     #DDD5C8;       /* warm beige border */
-  --clr-nav-bg:     rgba(26, 22, 18, 0.96);
+  /* Dark theme colours */
+  --clr-bg:         #0f1a14;       /* very dark green-black */
+  --clr-bg-alt:     #162212;       /* slightly lighter dark green */
+  --clr-hero-bg:    #0a1009;       /* near-black hero */
+  --clr-text:       #e8f5e0;       /* off-white with slight green tint */
+  --clr-text-muted: #7aad8a;       /* muted green */
+  --clr-accent:     #4ade80;       /* bright green (logo bar colour) */
+  --clr-accent-lt:  #86efac;       /* lighter green */
+  --clr-accent-dk:  #22c55e;       /* deeper green */
+  --clr-gold:       #22d3ee;       /* cyan (logo line colour) */
+  --clr-surface:    #162212;
+  --clr-border:     #1e3a2f;
+  --clr-nav-bg:     rgba(10, 16, 9, 0.96);
+  --clr-card-bg:    #162212;
+  --clr-strip-bg:   #0f1a14;
 
   --font-display:   'Cormorant Garamond', 'Georgia', serif;
   --font-body:      'Montserrat', 'DM Sans', Arial, sans-serif;
@@ -33,11 +36,29 @@
   --radius:         4px;
   --radius-lg:      10px;
   --transition:     0.3s ease;
-  --shadow:         0 4px 24px rgba(44, 37, 32, 0.10);
-  --shadow-lg:      0 12px 48px rgba(44, 37, 32, 0.16);
+  --shadow:         0 4px 24px rgba(0, 0, 0, 0.4);
+  --shadow-lg:      0 12px 48px rgba(0, 0, 0, 0.6);
 
   --nav-height:     72px;
   --max-width:      1160px;
+}
+
+/* --- Light Theme overrides --- */
+[data-theme="light"] {
+  --clr-bg:         #f5faf6;
+  --clr-bg-alt:     #e8f5eb;
+  --clr-hero-bg:    #f0faf2;
+  --clr-text:       #0f2d1a;
+  --clr-text-muted: #4a7a5a;
+  --clr-accent:     #1a7a3a;
+  --clr-accent-lt:  #2da44e;
+  --clr-accent-dk:  #0f5728;
+  --clr-gold:       #0891b2;
+  --clr-surface:    #ffffff;
+  --clr-border:     #b8dfc2;
+  --clr-nav-bg:     rgba(15, 26, 18, 0.96);
+  --clr-card-bg:    #ffffff;
+  --clr-strip-bg:   #0f2d1a;
 }
 
 /* --- Reset & Base --- */
@@ -51,6 +72,7 @@ body {
   color: var(--clr-text);
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 img { max-width: 100%; display: block; }
@@ -261,6 +283,28 @@ p:last-child { margin-bottom: 0; }
   background: var(--clr-accent-dk);
 }
 
+/* Theme Toggle Button */
+.theme-toggle {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.8);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+.theme-toggle:hover {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  transform: rotate(15deg);
+}
+
 /* Hamburger */
 .hamburger {
   display: none;
@@ -314,7 +358,12 @@ p:last-child { margin-bottom: 0; }
   background: var(--clr-hero-bg);
   display: flex;
   align-items: center;
+  justify-content: center;
   overflow: hidden;
+}
+
+[data-theme="light"] .hero {
+  background: linear-gradient(135deg, #d8f5e0 0%, #e8faf0 50%, #d0f0e0 100%);
 }
 
 #particles-js {
@@ -334,6 +383,38 @@ p:last-child { margin-bottom: 0; }
   padding-top: var(--nav-height);
 }
 
+/* Centred hero variant */
+.hero-content--centered {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: calc(var(--nav-height) + 2rem);
+  padding-bottom: 4rem;
+}
+
+/* Large centred logo */
+.hero-logo-wrap {
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: fadeUp 0.9s ease 0.2s forwards;
+}
+
+.hero-logo-img {
+  width: clamp(160px, 22vw, 280px);
+  height: auto;
+  filter: drop-shadow(0 8px 32px rgba(74, 222, 128, 0.4));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.hero-logo-img:hover {
+  transform: scale(1.04);
+  filter: drop-shadow(0 12px 48px rgba(74, 222, 128, 0.6));
+}
+
+[data-theme="light"] .hero-logo-img {
+  filter: drop-shadow(0 8px 32px rgba(26, 122, 58, 0.3));
+}
+
 .hero-eyebrow {
   font-family: var(--font-body);
   font-size: 0.72rem;
@@ -341,20 +422,24 @@ p:last-child { margin-bottom: 0; }
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--clr-accent-lt);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
   opacity: 0;
-  animation: fadeUp 0.8s ease 0.3s forwards;
+  animation: fadeUp 0.8s ease 0.5s forwards;
 }
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-size: clamp(2.8rem, 6vw, 5rem);
   font-weight: 300;
   line-height: 1.1;
   color: #fff;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
   opacity: 0;
-  animation: fadeUp 0.8s ease 0.5s forwards;
+  animation: fadeUp 0.8s ease 0.7s forwards;
+}
+
+[data-theme="light"] .hero-title {
+  color: #0f2d1a;
 }
 
 .hero-title em {
@@ -362,49 +447,27 @@ p:last-child { margin-bottom: 0; }
   font-style: italic;
 }
 
-/* Animated role cycling */
-.hero-roles {
-  font-family: var(--font-display);
-  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
-  font-style: italic;
-  color: var(--clr-gold);
-  min-height: 2.2rem;
-  margin-bottom: 2rem;
-  opacity: 0;
-  animation: fadeUp 0.8s ease 0.65s forwards;
-}
-
-.hero-role-text {
-  display: inline-block;
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.hero-role-text.fade-out {
-  opacity: 0;
-  transform: translateY(-12px);
-}
-
-.hero-role-text.fade-in {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 .hero-sub {
   font-size: clamp(0.95rem, 1.5vw, 1.1rem);
   color: rgba(255,255,255,0.65);
-  max-width: 520px;
+  max-width: 560px;
   line-height: 1.8;
   margin-bottom: 2.5rem;
   opacity: 0;
-  animation: fadeUp 0.8s ease 0.8s forwards;
+  animation: fadeUp 0.8s ease 0.9s forwards;
+}
+
+[data-theme="light"] .hero-sub {
+  color: rgba(15, 45, 26, 0.75);
 }
 
 .hero-actions {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  justify-content: center;
   opacity: 0;
-  animation: fadeUp 0.8s ease 1s forwards;
+  animation: fadeUp 0.8s ease 1.1s forwards;
 }
 
 .hero-scroll-hint {
@@ -423,19 +486,19 @@ p:last-child { margin-bottom: 0; }
   letter-spacing: 0.2em;
   text-transform: uppercase;
   opacity: 0;
-  animation: fadeIn 1s ease 1.5s forwards;
+  animation: fadeIn 1s ease 1.8s forwards;
 }
 
 .scroll-line {
   width: 1px;
   height: 40px;
-  background: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent);
+  background: linear-gradient(to bottom, rgba(74,222,128,0.5), transparent);
   animation: scrollPulse 2s ease-in-out infinite;
 }
 
 @keyframes scrollPulse {
   0%, 100% { opacity: 0.3; transform: scaleY(1); }
-  50% { opacity: 0.8; transform: scaleY(1.1); }
+  50% { opacity: 0.9; transform: scaleY(1.1); }
 }
 
 @keyframes fadeUp {
@@ -449,10 +512,59 @@ p:last-child { margin-bottom: 0; }
 }
 
 /* =============================================
+   SERVICES TICKER
+   ============================================= */
+.ticker-wrap {
+  overflow: hidden;
+  background: var(--clr-accent);
+  padding: 0.75rem 0;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+[data-theme="light"] .ticker-wrap {
+  background: var(--clr-accent);
+}
+
+.ticker-track {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  white-space: nowrap;
+  animation: ticker-scroll 45s linear infinite;
+  width: max-content;
+}
+
+.ticker-track:hover {
+  animation-play-state: paused;
+}
+
+.ticker-item {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #0a1009;
+  padding: 0 2rem;
+}
+
+.ticker-sep {
+  color: rgba(10, 16, 9, 0.4);
+  font-size: 0.5rem;
+  flex-shrink: 0;
+}
+
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* =============================================
    STATS STRIP
    ============================================= */
 .intro-strip {
-  background: var(--clr-text);
+  background: var(--clr-strip-bg);
   padding: 2.5rem 0;
 }
 
@@ -541,7 +653,7 @@ p:last-child { margin-bottom: 0; }
 }
 
 .service-card--featured {
-  background: var(--clr-text);
+  background: var(--clr-accent-dk);
   border-color: var(--clr-accent);
   color: #fff;
 }
@@ -1102,7 +1214,7 @@ p:last-child { margin-bottom: 0; }
    FOOTER
    ============================================= */
 .footer {
-  background: var(--clr-text);
+  background: #0a1009;
   color: rgba(255,255,255,0.6);
   padding: 4rem 0 2rem;
 }
