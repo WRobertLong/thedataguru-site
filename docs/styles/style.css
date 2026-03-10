@@ -398,6 +398,9 @@ p:last-child { margin-bottom: 0; }
   margin-bottom: 2rem;
   opacity: 0;
   animation: fadeUp 0.9s ease 0.2s forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero-logo-img {
@@ -1338,6 +1341,7 @@ p:last-child { margin-bottom: 0; }
    ============================================= */
 .logo-ticker {
   width: clamp(160px, 22vw, 280px);
+  max-width: 100%;
   overflow: hidden;
   margin-top: 0.5rem;
   border-top: 1px solid rgba(74,222,128,0.3);
