@@ -269,7 +269,7 @@ p:last-child { margin-bottom: 0; }
 }
 
 .nav-links a.active {
-  color: var(--clr-accent-lt);
+  color: #fff;
 }
 
 .nav-links .nav-cta {
