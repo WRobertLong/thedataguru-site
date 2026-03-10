@@ -1332,3 +1332,43 @@ p:last-child { margin-bottom: 0; }
   .hero-actions { flex-direction: column; }
   .hero-actions .btn { text-align: center; }
 }
+
+/* =============================================
+   LOGO TICKER (below logo, logo-width)
+   ============================================= */
+.logo-ticker {
+  width: clamp(160px, 22vw, 280px);
+  overflow: hidden;
+  margin-top: 0.5rem;
+  border-top: 1px solid rgba(74,222,128,0.3);
+  border-bottom: 1px solid rgba(74,222,128,0.3);
+  padding: 0.35rem 0;
+}
+
+.logo-ticker-track {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  white-space: nowrap;
+  animation: ticker-scroll 30s linear infinite;
+  width: max-content;
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--clr-accent-lt);
+}
+
+.logo-ticker-track:hover { animation-play-state: paused; }
+
+.logo-ticker-track .ts {
+  color: rgba(74,222,128,0.4);
+  font-size: 0.4rem;
+  flex-shrink: 0;
+}
+
+/* Fix LTD colour in nav */
+.logo-sub {
+  color: rgba(255,255,255,0.45) !important;
+}
