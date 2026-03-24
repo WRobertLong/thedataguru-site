@@ -12,23 +12,22 @@
   font-display: swap;
 }
 
-/* --- CSS Variables — Dark Theme (default, matches logo) --- */
+/* --- CSS Variables — Dark Theme (default) --- */
 :root {
-  /* Dark theme colours */
-  --clr-bg:         #0f1a14;       /* very dark green-black */
-  --clr-bg-alt:     #162212;       /* slightly lighter dark green */
-  --clr-hero-bg:    #0a1009;       /* near-black hero */
-  --clr-text:       #e8f5e0;       /* off-white with slight green tint */
-  --clr-text-muted: #7aad8a;       /* muted green */
-  --clr-accent:     #4ade80;       /* bright green (logo bar colour) */
-  --clr-accent-lt:  #86efac;       /* lighter green */
-  --clr-accent-dk:  #22c55e;       /* deeper green */
-  --clr-gold:       #22d3ee;       /* cyan (logo line colour) */
-  --clr-surface:    #162212;
-  --clr-border:     #1e3a2f;
-  --clr-nav-bg:     rgba(10, 16, 9, 0.96);
-  --clr-card-bg:    #162212;
-  --clr-strip-bg:   #0f1a14;
+  --clr-bg:         #1A1612;       /* very dark warm brown */
+  --clr-bg-alt:     #221e19;       /* slightly lighter warm brown */
+  --clr-hero-bg:    #1A1612;       /* dark warm brown hero */
+  --clr-text:       #FAF7F2;       /* warm off-white */
+  --clr-text-muted: #B8A99A;       /* muted warm */
+  --clr-accent:     #C0622A;       /* terracotta / burnt orange */
+  --clr-accent-lt:  #E8A87C;       /* lighter terracotta */
+  --clr-accent-dk:  #8B3E18;       /* deeper burnt orange */
+  --clr-gold:       #B8963E;       /* warm gold */
+  --clr-surface:    #221e19;
+  --clr-border:     #3a3028;
+  --clr-nav-bg:     rgba(26, 22, 18, 0.96);
+  --clr-card-bg:    #221e19;
+  --clr-strip-bg:   #2C2520;
 
   --font-display:   'Cormorant Garamond', 'Georgia', serif;
   --font-body:      'Montserrat', 'DM Sans', Arial, sans-serif;
@@ -45,20 +44,20 @@
 
 /* --- Light Theme overrides --- */
 [data-theme="light"] {
-  --clr-bg:         #f5faf6;
-  --clr-bg-alt:     #e8f5eb;
-  --clr-hero-bg:    #f0faf2;
-  --clr-text:       #0f2d1a;
-  --clr-text-muted: #4a7a5a;
-  --clr-accent:     #1a7a3a;
-  --clr-accent-lt:  #2da44e;
-  --clr-accent-dk:  #0f5728;
-  --clr-gold:       #0891b2;
+  --clr-bg:         #FAF7F2;
+  --clr-bg-alt:     #F2EDE4;
+  --clr-hero-bg:    #1A1612;
+  --clr-text:       #2C2520;
+  --clr-text-muted: #7A6E65;
+  --clr-accent:     #C0622A;
+  --clr-accent-lt:  #E8A87C;
+  --clr-accent-dk:  #8B3E18;
+  --clr-gold:       #B8963E;
   --clr-surface:    #ffffff;
-  --clr-border:     #b8dfc2;
-  --clr-nav-bg:     rgba(15, 26, 18, 0.96);
+  --clr-border:     #DDD5C8;
+  --clr-nav-bg:     rgba(26, 22, 18, 0.96);
   --clr-card-bg:    #ffffff;
-  --clr-strip-bg:   #0f2d1a;
+  --clr-strip-bg:   #2C2520;
 }
 
 /* --- Reset & Base --- */
