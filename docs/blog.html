@@ -11,16 +11,37 @@
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>The Data Guru Ltd — Data Consulting, Recovery &amp; Diagnostics</title>
-  <meta name="description" content="Expert data analytics consulting, professional data recovery, and precision diagnostics for businesses and individuals. Based in the UK.">
+  <title>Blog — The Data Guru Ltd</title>
+  <meta name="description" content="Articles, research and clinical trial reviews from The Data Guru Ltd.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="styles/style.css">
+  <style>
+    .filter-bar { display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap; margin-bottom:3rem; }
+    .filter-btn { font-family:var(--font-body); font-size:0.75rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; padding:0.5rem 1.1rem; border-radius:2rem; border:1.5px solid var(--clr-border); background:transparent; color:var(--clr-text-muted); cursor:pointer; transition:all 0.25s ease; }
+    .filter-btn:hover { border-color:var(--clr-accent); color:var(--clr-accent); }
+    .filter-btn.active { background:var(--clr-accent); border-color:var(--clr-accent); color:#fff; }
+    .blog-listing-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+    .blog-listing-card { background:var(--clr-surface); border:1px solid var(--clr-border); border-radius:var(--radius-lg); overflow:hidden; transition:all 0.3s ease; display:flex; flex-direction:column; text-decoration:none; color:inherit; }
+    .blog-listing-card:hover { box-shadow:var(--shadow-lg); transform:translateY(-4px); border-color:var(--clr-accent-lt); }
+    .blog-listing-card.hidden { display:none; }
+    .card-img-band { width:100%; height:160px; display:flex; align-items:center; justify-content:center; font-family:var(--font-body); font-size:0.7rem; font-weight:500; letter-spacing:0.16em; text-transform:uppercase; color:rgba(255,255,255,0.5); }
+    .band-ai       { background:linear-gradient(135deg,#1a1f2e,#252d40); }
+    .band-blockchain { background:linear-gradient(135deg,#1a2020,#222e2e); }
+    .band-cardiology { background:linear-gradient(135deg,#2a1a1a,#3a2020); }
+    .card-body { padding:1.5rem; flex:1; display:flex; flex-direction:column; }
+    .card-category { font-size:0.68rem; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:var(--clr-accent); margin-bottom:0.6rem; }
+    .card-title { font-family:var(--font-display); font-size:1.2rem; line-height:1.3; color:var(--clr-text); margin-bottom:0.75rem; }
+    .card-excerpt { font-size:0.875rem; color:var(--clr-text-muted); line-height:1.75; flex:1; margin-bottom:1.25rem; }
+    .card-footer { display:flex; align-items:center; justify-content:space-between; font-size:0.72rem; color:var(--clr-text-muted); border-top:1px solid var(--clr-border); padding-top:1rem; margin-top:auto; }
+    .card-author { display:flex; align-items:center; gap:0.4rem; }
+    .card-author i { color:var(--clr-accent); font-size:0.65rem; }
+    @media(max-width:900px){.blog-listing-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:580px){.blog-listing-grid{grid-template-columns:1fr;}}
+  </style>
 </head>
 <body>
-
-  <!-- NAV -->
   <nav class="nav" id="navbar">
     <div class="nav-inner">
       <a href="index.html" class="logo">
@@ -28,284 +49,140 @@
         <span class="logo-sub">Ltd</span>
       </a>
       <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
+        <li><a href="team.html">Team</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="blog.html">Blog</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
         <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
       </ul>
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-        <i class="fas fa-sun"></i>
-      </button>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
     <div class="mobile-menu" id="mobileMenu">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="blog.html">Blog</a>
-      <a href="contact.html">Get in Touch</a>
+      <a href="index.html">Home</a><a href="about.html">About</a><a href="team.html">Team</a>
+      <a href="services.html">Services</a><a href="blog.html">Blog</a><a href="contact.html">Get in Touch</a>
     </div>
   </nav>
 
-  <!-- TOP SECTION -->
-  <section class="hero" id="hero">
-    <div id="particles-js"></div>
-    <div class="hero-content hero-content--centered" style="display:flex;flex-direction:column;align-items:center;text-align:center;width:100%;">
-      <div class="hero-logo-wrap" style="display:flex;flex-direction:column;align-items:center;">
-        <img src="images/medium_resolution_logo-cropped.png" alt="The Data Guru Ltd" class="hero-logo-img">
-        <div class="logo-ticker" style="width:280px;overflow:hidden;margin-top:0.5rem;border-top:1px solid rgba(74,222,128,0.3);border-bottom:1px solid rgba(74,222,128,0.3);padding:0.35rem 0;">
-          <div class="logo-ticker-track">
-            <span>Statistical Consulting</span><span class="ts">◆</span>
-            <span>Data Architecture &amp; Strategy</span><span class="ts">◆</span>
-            <span>Data Science &amp; Engineering</span><span class="ts">◆</span>
-            <span>Data Recovery</span><span class="ts">◆</span>
-            <span>Computer Diagnostics &amp; Repair</span><span class="ts">◆</span>
-            <span>On-site Maintenance</span><span class="ts">◆</span>
-            <span>Personal &amp; Company Websites</span><span class="ts">◆</span>
-            <span>Statistical Consulting</span><span class="ts">◆</span>
-            <span>Data Architecture &amp; Strategy</span><span class="ts">◆</span>
-            <span>Data Science &amp; Engineering</span><span class="ts">◆</span>
-            <span>Data Recovery</span><span class="ts">◆</span>
-            <span>Computer Diagnostics &amp; Repair</span><span class="ts">◆</span>
-            <span>On-site Maintenance</span><span class="ts">◆</span>
-            <span>Personal &amp; Company Websites</span><span class="ts">◆</span>
-          </div>
-        </div>
-      </div>
-      <h1 class="hero-title">Your Data.<br><em>Understood. Protected. Restored.</em></h1>
-      <p class="hero-sub">Expert statistics &amp; data consulting. Recovery &amp; repair when it matters.</p>
-      <div class="hero-actions">
-        <a href="services.html" class="btn btn-primary">Explore Services</a>
-      </div>
-    </div>
-    <div class="hero-scroll-hint">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
-    </div>
-  </section>
-
-
-
-  <!-- STATS STRIP -->
-  <section class="intro-strip">
+  <section class="page-hero">
     <div class="container">
-      <div class="strip-grid">
-        <div class="strip-item">
-          <span class="strip-num">15+</span>
-          <span class="strip-label">Years Experience</span>
-        </div>
-        <div class="strip-divider"></div>
-        <div class="strip-item">
-          <span class="strip-num">500+</span>
-          <span class="strip-label">Projects Delivered</span>
-        </div>
-        <div class="strip-divider"></div>
-        <div class="strip-item">
-          <span class="strip-num">98%</span>
-          <span class="strip-label">Recovery Success Rate</span>
-        </div>
-        <div class="strip-divider"></div>
-        <div class="strip-item">
-          <span class="strip-num">#17</span>
-          <span class="strip-label">Cross Validated, All Time</span>
-        </div>
-      </div>
+      <p class="section-eyebrow">Ideas &amp; Research</p>
+      <h1>The Blog</h1>
+      <p>Articles, clinical trial reviews, and research from the team — covering statistics, AI, data science, and more.</p>
     </div>
   </section>
 
-  <!-- SERVICES PREVIEW -->
   <section class="section">
     <div class="container">
-      <div class="section-header">
-        <p class="section-eyebrow">What We Do</p>
-        <h2 class="section-title">Three Pillars of<br><em>Data Expertise</em></h2>
-        <p class="section-intro">From strategic analytics consulting to emergency data recovery, we bring deep expertise to every engagement.</p>
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="statistics-ai">Statistics &amp; AI</button>
+        <button class="filter-btn" data-filter="blockchain-tech">Blockchain &amp; Tech</button>
+        <button class="filter-btn" data-filter="cardiology">Clinical Trial Reviews</button>
+        <button class="filter-btn" data-filter="guest">Guest Posts</button>
       </div>
-      <div class="services-grid">
-        <a href="services.html#analytics" class="service-card">
-          <div class="service-icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8 36L18 24L26 30L36 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <circle cx="8" cy="36" r="2.5" fill="currentColor"/>
-              <circle cx="18" cy="24" r="2.5" fill="currentColor"/>
-              <circle cx="26" cy="30" r="2.5" fill="currentColor"/>
-              <circle cx="36" cy="16" r="2.5" fill="currentColor"/>
-              <path d="M8 40h32" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
-            </svg>
+
+      <div class="blog-listing-grid" id="blogGrid">
+
+        <a href="blog/posts/AI-LLM.html" class="blog-listing-card" data-category="statistics-ai">
+          <div class="card-img-band band-ai">Statistics &amp; AI</div>
+          <div class="card-body">
+            <div class="card-category">Statistics &amp; AI</div>
+            <div class="card-title">Are Large Language Models "Intelligent"? Text Prediction, Embodiment, and the Road to AGI</div>
+            <p class="card-excerpt">A critical, evidence-based argument that LLMs are powerful text-prediction systems but not general intelligences — and what neuroscience says about what genuine AGI would require.</p>
+            <div class="card-footer">
+              <div class="card-author"><i class="fas fa-user"></i> Robert Long</div>
+              <span>2025</span>
+            </div>
           </div>
-          <h3>Data &amp; Analytics Consulting</h3>
-          <p>Transform raw data into strategic advantage. We design analytics frameworks, build dashboards, and guide data-driven decision making for organisations of all sizes.</p>
-          <span class="card-link">Learn more →</span>
         </a>
-        <a href="services.html#recovery" class="service-card service-card--featured">
-          <div class="service-icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M24 8C15.16 8 8 15.16 8 24s7.16 16 16 16 16-7.16 16-16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              <path d="M33 8l7 0 0 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M40 8L28 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              <path d="M24 18v6l4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
+
+        <a href="blog/posts/PQ-Blockchain.html" class="blog-listing-card" data-category="blockchain-tech">
+          <div class="card-img-band band-blockchain">Blockchain &amp; Tech</div>
+          <div class="card-body">
+            <div class="card-category">Blockchain &amp; Tech</div>
+            <div class="card-title">The Quantum Challenge to Blockchain: What Business Leaders Need to Know</div>
+            <p class="card-excerpt">Quantum computing is not just a technical concern — it's a strategic risk for anyone holding or building on blockchain. A plain-language guide to the threat and the path forward.</p>
+            <div class="card-footer">
+              <div class="card-author"><i class="fas fa-user"></i> Sasha Long</div>
+              <span>2025</span>
+            </div>
           </div>
-          <h3>Data Recovery</h3>
-          <p>Lost data is rarely gone forever. Our advanced recovery techniques work across drives, flash storage, RAID arrays, and mobile devices with a 98% success rate.</p>
-          <span class="card-link">Learn more →</span>
         </a>
-        <a href="services.html#diagnostics" class="service-card">
-          <div class="service-icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="8" y="10" width="32" height="24" rx="3" stroke="currentColor" stroke-width="2"/>
-              <path d="M16 34v4M32 34v4M12 38h24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              <path d="M18 22l3 3 5-6 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+
+        <a href="blog/stat-reviews/capricorn/index.html" class="blog-listing-card" data-category="cardiology">
+          <div class="card-img-band band-cardiology">Clinical Trial Review</div>
+          <div class="card-body">
+            <div class="card-category">Clinical Trial Review</div>
+            <div class="card-title">Review and Statistical Critique of the CAPRICORN Trial (The Lancet, 2001)</div>
+            <p class="card-excerpt">A detailed methodological critique of CAPRICORN's mid-trial endpoint amendment, alpha-level splitting, and the ethical dimensions of protocol changes. Includes a statistical glossary for cardiologists.</p>
+            <div class="card-footer">
+              <div class="card-author"><i class="fas fa-user"></i> Robert Long</div>
+              <span>April 2025 · v1.9</span>
+            </div>
           </div>
-          <h3>Diagnostics &amp; Repair</h3>
-          <p>Comprehensive diagnostics for computers, laptops, and mobile devices. We identify root causes, perform precision repairs, and get you back up and running fast.</p>
-          <span class="card-link">Learn more →</span>
         </a>
+
+        <a href="blog/stat-reviews/sprint/index.html" class="blog-listing-card" data-category="cardiology">
+          <div class="card-img-band band-cardiology">Clinical Trial Review</div>
+          <div class="card-body">
+            <div class="card-category">Clinical Trial Review</div>
+            <div class="card-title">Statistical and Methodological Review of the SPRINT Trial (NEJM, 2015)</div>
+            <p class="card-excerpt">A critical appraisal of SPRINT's design, early stopping, composite outcomes, and BP measurement protocol — and what this means for applying the findings in everyday cardiology practice.</p>
+            <div class="card-footer">
+              <div class="card-author"><i class="fas fa-user"></i> Robert Long</div>
+              <span>May 2025 · v3.3</span>
+            </div>
+          </div>
+        </a>
+
       </div>
     </div>
   </section>
 
-  <!-- TESTIMONIALS -->
-  <section class="section section-alt">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-eyebrow">Client Voices</p>
-        <h2 class="section-title">What People<br><em>Say About Us</em></h2>
-      </div>
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <p class="testimonial-text">Robert recovered three years of client data from a failed RAID array that two other companies had written off. Professional, clear in communication, and delivered faster than promised. Absolute lifesaver.</p>
-          <div class="testimonial-author">
-            <span class="author-name">Sarah Mitchell</span>
-            <span class="author-role">Director, Vertex Consulting</span>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <p class="testimonial-text">The analytics framework The Data Guru built transformed how we report to our board. We went from spreadsheet chaos to a live dashboard in four weeks. The clarity it brought was remarkable.</p>
-          <div class="testimonial-author">
-            <span class="author-name">James Okafor</span>
-            <span class="author-role">CFO, Meridian Group</span>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <p class="testimonial-text">I've seen Robert's responses on Cross Validated for years — he's genuinely one of the best statistical minds out there. Having him consult on our clinical trial data was invaluable.</p>
-          <div class="testimonial-author">
-            <span class="author-name">Dr. Ananya Patel</span>
-            <span class="author-role">Lead Researcher, BioMetrics Lab</span>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <p class="testimonial-text">Fast, honest, and thorough. My MacBook was diagnosed and repaired the same day. The problem had been misdiagnosed by Apple — Robert found the actual fault within an hour. Highly recommended.</p>
-          <div class="testimonial-author">
-            <span class="author-name">Tom Reeves</span>
-            <span class="author-role">Freelance Designer</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BLOG PREVIEW -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header" style="display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
-        <div>
-          <p class="section-eyebrow">Latest Thinking</p>
-          <h2 class="section-title">From the Blog</h2>
-        </div>
-        <a href="blog.html" class="btn btn-outline">View All Posts</a>
-      </div>
-      <div class="blog-grid">
-        <a href="blog.html" class="blog-card">
-          <div class="blog-card-img-placeholder">Analytics</div>
-          <div class="blog-card-body">
-            <span class="blog-tag">Statistics</span>
-            <h3>Why Mixed Models Are Misunderstood — And How to Fix That</h3>
-            <p>A practical guide to understanding random effects, when to use lme4, and the mistakes most analysts make with repeated measures data.</p>
-            <span class="blog-meta">March 2025 · 8 min read</span>
-          </div>
-        </a>
-        <a href="blog.html" class="blog-card">
-          <div class="blog-card-img-placeholder">Recovery</div>
-          <div class="blog-card-body">
-            <span class="blog-tag">Data Recovery</span>
-            <h3>RAID Failure: What Actually Happens and What You Can Salvage</h3>
-            <p>The mechanics of RAID array failure, why rebuild attempts often make things worse, and the steps to take in the first 30 minutes.</p>
-            <span class="blog-meta">February 2025 · 6 min read</span>
-          </div>
-        </a>
-        <a href="blog.html" class="blog-card">
-          <div class="blog-card-img-placeholder">Strategy</div>
-          <div class="blog-card-body">
-            <span class="blog-tag">Data Strategy</span>
-            <h3>Small Business, Big Data: Building an Analytics Stack That Scales</h3>
-            <p>You don't need a data team to make good use of your data. Here's a pragmatic roadmap for businesses of under 50 people.</p>
-            <span class="blog-meta">January 2025 · 10 min read</span>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA BAND -->
   <section class="cta-band">
     <div class="container">
       <div class="cta-band-inner">
         <div>
-          <h2>Ready to talk about your data?</h2>
-          <p>Whether it's a strategic project or an emergency — we're here to help.</p>
+          <h2>Want to contribute?</h2>
+          <p>We welcome guest posts from statisticians, clinicians, and data professionals.</p>
         </div>
         <a href="contact.html" class="btn btn-white">Get in Touch</a>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="index.html" class="logo">
-            <span class="logo-main">The Data Guru</span>
-            <span class="logo-sub">&nbsp;Ltd</span>
+            <span class="logo-main">The Data Guru</span><span class="logo-sub">&nbsp;Ltd</span>
           </a>
-          <p>Expert data consulting, recovery, and device diagnostics. Bringing clarity and confidence to your most important asset.</p>
+          <p>Expert data consulting, recovery, and device diagnostics.</p>
           <div class="footer-social">
-            <a href="https://www.linkedin.com/in/roblongleeds/" target="_blank" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://github.com/WRobertLong" target="_blank" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://stats.stackexchange.com/users/7486/robert-long" target="_blank" class="social-link" aria-label="Cross Validated"><i class="fas fa-chart-bar"></i></a>
-            <a href="/cdn-cgi/l/email-protection#d5b6babba1b4b6a195a1bdb0b1b4a1b4b2a0a7a0fbb6bafba0be" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/roblongleeds/" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/WRobertLong" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+            <a href="https://stats.stackexchange.com/users/7486/robert-long" target="_blank" class="social-link"><i class="fas fa-chart-bar"></i></a>
+            <a href="mailto:rob@thedataguru.net" class="social-link"><i class="fas fa-envelope"></i></a>
           </div>
         </div>
-        <div class="footer-col">
-          <h5>Services</h5>
-          <ul>
-            <li><a href="services.html#analytics">Data &amp; Analytics Consulting</a></li>
-            <li><a href="services.html#recovery">Data Recovery</a></li>
-            <li><a href="services.html#diagnostics">Diagnostics &amp; Repair</a></li>
-            <li><a href="services.html#training">Training &amp; Workshops</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Company</h5>
-          <ul>
-            <li><a href="about.html">About Robert</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Community</h5>
-          <ul>
-            <li><a href="https://stats.stackexchange.com/users/7486/robert-long" target="_blank">Cross Validated</a></li>
-            <li><a href="https://stackoverflow.com/users/1009823/robert-long" target="_blank">Stack Overflow</a></li>
-            <li><a href="https://github.com/WRobertLong" target="_blank">GitHub</a></li>
-          </ul>
-        </div>
+        <div class="footer-col"><h5>Services</h5><ul>
+          <li><a href="services.html#analytics">Data &amp; Analytics Consulting</a></li>
+          <li><a href="services.html#recovery">Data Recovery</a></li>
+          <li><a href="services.html#diagnostics">Diagnostics &amp; Repair</a></li>
+        </ul></div>
+        <div class="footer-col"><h5>Company</h5><ul>
+          <li><a href="about.html">About Robert</a></li>
+          <li><a href="team.html">Meet the Team</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul></div>
+        <div class="footer-col"><h5>Community</h5><ul>
+          <li><a href="https://stats.stackexchange.com/users/7486/robert-long" target="_blank">Cross Validated</a></li>
+          <li><a href="https://stackoverflow.com/users/1009823/robert-long" target="_blank">Stack Overflow</a></li>
+          <li><a href="https://github.com/WRobertLong" target="_blank">GitHub</a></li>
+        </ul></div>
       </div>
       <div class="footer-bottom">
         <span>© 2025 The Data Guru Ltd. All rights reserved.</span>
@@ -314,4 +191,25 @@
     </div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/c
+  <script src="scripts/particles.min.js"></script>
+  <script src="scripts/script.js"></script>
+  <script>
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.blog-listing-card');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        cards.forEach(card => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
