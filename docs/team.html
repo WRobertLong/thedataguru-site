@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VSJE2TEEHZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-VSJE2TEEHZ");
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Meet the Team — The Data Guru Ltd</title>
+  <meta name="description" content="Meet the people behind The Data Guru Ltd — statisticians, epidemiologists, and researchers bringing deep expertise to every project.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="styles/style.css">
+  <style>
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    .team-card {
+      background: var(--clr-surface);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: all var(--transition);
+    }
+
+    .team-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
+      border-color: var(--clr-accent-lt);
+    }
+
+    .team-photo-wrap {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      background: var(--clr-bg-alt);
+    }
+
+    .team-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .team-card-body {
+      padding: 1.75rem;
+    }
+
+    .team-name {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--clr-text);
+      margin-bottom: 0.2rem;
+    }
+
+    .team-role {
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--clr-accent);
+      margin-bottom: 1.1rem;
+    }
+
+    .team-bio {
+      font-size: 0.875rem;
+      color: var(--clr-text-muted);
+      line-height: 1.85;
+      margin-bottom: 1.25rem;
+    }
+
+    .team-links {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .team-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--clr-accent);
+      border: 1px solid var(--clr-accent);
+      border-radius: 2rem;
+      padding: 0.3rem 0.85rem;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    .team-link:hover {
+      background: var(--clr-accent);
+      color: #fff;
+    }
+
+    .collab-note {
+      text-align: center;
+      margin-top: 4rem;
+      padding: 2.5rem;
+      background: var(--clr-surface);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-lg);
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .collab-note p {
+      font-size: 0.9rem;
+      color: var(--clr-text-muted);
+      line-height: 1.85;
+      margin-bottom: 1.25rem;
+    }
+
+    @media (max-width: 900px) {
+      .team-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 580px) {
+      .team-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-main">The Data Guru</span>
+        <span class="logo-sub">Ltd</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="team.html" class="active">Team</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="team.html">Team</a>
+      <a href="services.html">Services</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Get in Touch</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-eyebrow">The People</p>
+      <h1>Meet the Team</h1>
+      <p>A small, expert group united by a belief in rigorous, honest, impactful data work.</p>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="section">
+    <div class="container">
+      <div class="team-grid">
+
+        <!-- Robert -->
+        <div class="team-card">
+          <div class="team-photo-wrap">
+            <img src="images/team-robert.png" alt="Robert Long">
+          </div>
+          <div class="team-card-body">
+            <div class="team-name">Robert Long</div>
+            <div class="team-role">Founder &amp; Principal Consultant</div>
+            <p class="team-bio">Statistician, data engineer, and recovery specialist with over 15 years of experience across healthcare, finance, research, and technology. Ranked #17 all time on Cross Validated out of 400,000+ users, and #1 globally in mixed models, multilevel analysis, and clinical trial methodology.</p>
+            <p class="team-bio">Robert founded The Data Guru Ltd to bring statistical rigour and practical data expertise to organisations and individuals who need it most — from clinical researchers to small businesses to anyone facing a data emergency.</p>
+            <div class="team-links">
+              <a href="https://www.linkedin.com/in/roblongleeds/" target="_blank" class="team-link"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+              <a href="https://stats.stackexchange.com/users/7486/robert-long" target="_blank" class="team-link"><i class="fas fa-chart-bar"></i> Cross Validated</a>
+              <a href="https://github.com/WRobertLong" target="_blank" class="team-link"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chrissy -->
+        <div class="team-card">
+          <div class="team-photo-wrap">
+            <img src="images/team-chrissy.png" alt="Chrissy Bishop">
+          </div>
+          <div class="team-card-body">
+            <div class="team-name">Chrissy Bishop</div>
+            <div class="team-role">Collaborating Epidemiologist &amp; Management Consultant</div>
+            <p class="team-bio">Independent epidemiologist and management consultant with 12 years of healthcare experience. Chrissy specialises in combining advanced analytics with stakeholder engagement to guide decision-making and produce measurable impact.</p>
+            <p class="team-bio">Her client portfolio spans public and private sector, non-profit, and intergovernmental organisations — including the NHS, the United Nations, the World Health Organization, and the pharmaceutical industry.</p>
+            <div class="team-links">
+            </div>
+          </div>
+        </div>
+
+        <!-- Sasha -->
+        <div class="team-card">
+          <div class="team-photo-wrap">
+            <img src="images/team-sasha.png" alt="Sasha Long">
+          </div>
+          <div class="team-card-body">
+            <div class="team-name">Sasha Long</div>
+            <div class="team-role">Research Assistant</div>
+            <p class="team-bio">First-year Business Management student at Durham University, contributing to research at The Data Guru Ltd exploring how blockchain and artificial intelligence can be applied in business contexts.</p>
+            <p class="team-bio">Sasha brings a fresh perspective and an eye for emerging technology trends, with a particular interest in the intersection of data, business strategy, and decentralised systems.</p>
+            <div class="team-links">
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Collaboration note -->
+      <div class="collab-note">
+        <p style="font-family:var(--font-display); font-size:1.3rem; color:var(--clr-text); margin-bottom:0.75rem;">Growing Our Network</p>
+        <p>The Data Guru Ltd works with a carefully selected group of independent collaborators — bringing in specialist expertise for the right projects. If you are a statistician, data scientist, or domain expert interested in working with us, we'd love to hear from you.</p>
+        <a href="contact.html" class="btn btn-outline">Get in Touch</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band">
+    <div class="container">
+      <div class="cta-band-inner">
+        <div>
+          <h2>Ready to work with us?</h2>
+          <p>Tell us about your project and we'll find the right expertise for it.</p>
+        </div>
+        <a href="contact.html" class="btn btn-white">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <span class="logo-main">The Data Guru</span>
+            <span class="logo-sub">&nbsp;Ltd</span>
+          </a>
+          <p>Expert data consulting, recovery, and device diagnostics. Bringing clarity and confidence to your most important asset.</p>
+          <div class="footer-social">
+            <a href="https://www.linkedin.com/in/roblongleeds/" target="_blank" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/WRobertLong" target="_blank" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://stats.stackexchange.com/users/7486/robert-long" target="_blank" class="social-link" aria-label="Cross Validated"><i class="fas fa-chart-bar"></i></a>
+            <a href="mailto:rob@thedataguru.net" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="services.html#analytics">Data &amp; Analytics Consulting</a></li>
+            <li><a href="services.html#recovery">Data Recovery</a></li>
+            <li><a href="services.html#diagnostics">Diagnostics &amp; Repair</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="about.html">About Robert</a></li>
+            <li><a href="team.html">Meet the Team</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Community</h5>
+          <ul>
+            <li><a href="https://stats.stackexchange.com/users/7486/robert-long" target="_blank">Cross Validated</a></li>
+            <li><a href="https://stackoverflow.com/users/1009823/robert-long" target="_blank">Stack Overflow</a></li>
+            <li><a href="https://github.com/WRobertLong" target="_blank">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 The Data Guru Ltd. All rights reserved.</span>
+        <span>Registered in England &amp; Wales</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts/particles.min.js"></script>
+  <script src="scripts/script.js"></script>
+</body>
+</html>
