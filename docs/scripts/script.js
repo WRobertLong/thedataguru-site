@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
     return {
       particles: {
         number: { value: 80, density: { enable: true, value_area: 900 } },
-        color: { value: isLight ? '#1e3a2f' : '#4ade80' },
+        color: { value: isLight ? '#8B3E18' : '#C0622A' },
         shape: { type: 'circle' },
         opacity: {
           value: isLight ? 0.40 : 0.60,
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
         line_linked: {
           enable: true,
           distance: 150,
-          color: isLight ? '#2d6a4f' : '#22d3ee',
+          color: isLight ? '#8B3E18' : '#B8963E',
           opacity: isLight ? 0.25 : 0.40,
           width: 1
         },
