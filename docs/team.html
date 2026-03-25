@@ -201,8 +201,8 @@
           </div>
         </div>
 
-        <!-- Chrissy -->
-        <div class="team-card">
+        <!-- Chrissy — visible from 1 May 2026 -->
+        <div class="team-card" id="chrissy-card">
           <div class="team-photo-wrap">
             <img src="images/team-chrissy.png" alt="Chrissy Bishop">
           </div>
@@ -310,5 +310,16 @@
 
   <script src="scripts/particles.min.js"></script>
   <script src="scripts/script.js"></script>
+  <script>
+    // Show Chrissy's card only on/after 1 May 2026
+    const chrissy = document.getElementById('chrissy-card');
+    if (chrissy) {
+      const today = new Date();
+      const reveal = new Date('2026-05-01');
+      if (today < reveal) {
+        chrissy.style.display = 'none';
+      }
+    }
+  </script>
 </body>
 </html>
