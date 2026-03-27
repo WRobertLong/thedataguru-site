@@ -141,7 +141,7 @@
 <body>
 
   <!-- NAV -->
-  <nav class="nav" id="navbar">
+    <nav class="nav" id="navbar">
     <div class="nav-inner">
       <a href="index.html" class="logo">
         <span class="logo-main">The Data Guru</span>
@@ -153,6 +153,7 @@
         <li><a href="team.html" class="active">Team</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="blog.html">Blog</a></li>
+        <li><a href="work-experience.html">Work Experience</a></li>
         <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
       </ul>
       <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -165,6 +166,7 @@
       <a href="team.html">Team</a>
       <a href="services.html">Services</a>
       <a href="blog.html">Blog</a>
+      <a href="work-experience.html">Work Experience</a>
       <a href="contact.html">Get in Touch</a>
     </div>
   </nav>
@@ -307,19 +309,7 @@
       </div>
     </div>
   </footer>
-
   <script src="scripts/particles.min.js"></script>
   <script src="scripts/script.js"></script>
-  <script>
-    // Show Chrissy's card only on/after 1 May 2026
-    const chrissy = document.getElementById('chrissy-card');
-    if (chrissy) {
-      const today = new Date();
-      const reveal = new Date('2026-05-01');
-      if (today < reveal) {
-        chrissy.style.display = 'none';
-      }
-    }
-  </script>
 </body>
 </html>

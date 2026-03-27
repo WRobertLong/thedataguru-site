@@ -42,7 +42,7 @@
   </style>
 </head>
 <body>
-  <nav class="nav" id="navbar">
+    <nav class="nav" id="navbar">
     <div class="nav-inner">
       <a href="index.html" class="logo">
         <span class="logo-main">The Data Guru</span>
@@ -54,13 +54,21 @@
         <li><a href="team.html">Team</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="blog.html" class="active">Blog</a></li>
+        <li><a href="work-experience.html">Work Experience</a></li>
         <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
       </ul>
-      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
     <div class="mobile-menu" id="mobileMenu">
-      <a href="index.html">Home</a><a href="about.html">About</a><a href="team.html">Team</a>
-      <a href="services.html">Services</a><a href="blog.html">Blog</a><a href="contact.html">Get in Touch</a>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="team.html">Team</a>
+      <a href="services.html">Services</a>
+      <a href="blog.html">Blog</a>
+      <a href="work-experience.html">Work Experience</a>
+      <a href="contact.html">Get in Touch</a>
     </div>
   </nav>
 
@@ -190,26 +198,7 @@
       </div>
     </div>
   </footer>
-
   <script src="scripts/particles.min.js"></script>
   <script src="scripts/script.js"></script>
-  <script>
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const cards = document.querySelectorAll('.blog-listing-card');
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const filter = btn.dataset.filter;
-        cards.forEach(card => {
-          if (filter === 'all' || card.dataset.category === filter) {
-            card.classList.remove('hidden');
-          } else {
-            card.classList.add('hidden');
-          }
-        });
-      });
-    });
-  </script>
 </body>
 </html>

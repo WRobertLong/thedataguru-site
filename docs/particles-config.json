@@ -1,0 +1,12 @@
+{
+  "colors": ["#C0622A", "#E8A87C", "#B8963E", "#4dd9c0", "#FAF7F2"],
+  "size_min": 1,
+  "size_max": 6,
+  "speed": 1.2,
+  "density": 80,
+  "line_color": "#B8963E",
+  "line_opacity": 0.35,
+  "line_distance": 150,
+  "opacity_min": 0.1,
+  "opacity_max": 0.7
+}
