@@ -309,6 +309,17 @@
       </div>
     </div>
   </footer>
+  <script>
+    // Show Chrissy's card only on/after 1 May 2026
+    const chrissy = document.getElementById('chrissy-card');
+    if (chrissy) {
+      const today = new Date();
+      const reveal = new Date('2026-05-01');
+      if (today < reveal) {
+        chrissy.style.display = 'none';
+      }
+    }
+  </script>
   <script src="scripts/particles.min.js"></script>
   <script src="scripts/script.js"></script>
 </body>
